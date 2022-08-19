@@ -24,13 +24,10 @@ https://bicyclecards.com/how-to-play/blackjack/
 
 Be able to play a hand against the dealer
 
-
 Bet button and Pair Plus button
 
-Random card
-=======
-Bet button and double down button
-Randoms card
+Random cards
+
 
 
 ---
@@ -40,6 +37,8 @@ Split pairs
 Win-Loss Record
 
 Have a money tracker 
+
+Multiple Decks
 
 
 ---
