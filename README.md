@@ -56,5 +56,5 @@ Setting up all of the logic
 
 
 ## Wireframe
-![image](https://user-images.githubusercontent.com/25106428/185550542-7769b296-16c9-495b-87b0-d552ab59effc.png)
+![wireframe](/media/wireframe.png)
 
