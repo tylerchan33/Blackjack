@@ -26,10 +26,12 @@ Random cards
 
 
 
+
 ---
 ## Stretch Goals
 
 Split pairs
+
 Win-Loss Record
 
 Have a money tracker 
