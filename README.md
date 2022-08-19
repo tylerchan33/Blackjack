@@ -1,9 +1,5 @@
 # Blackjack
 
-# Blackjack
-
-## Blackjack
-
 ### Rules:
 
 Just a simple game of blackjack.  In case you don't know the rules, please see below:
@@ -45,11 +41,8 @@ Multiple Decks
 ## Potential Roadblocks
 
 
-Hopefully my logic is sound 
-
-Making the cards look good
-=======
 Thinking about how to set Ace as a variable that can have multiple values
+
 Setting up all of the logic 
 
 
