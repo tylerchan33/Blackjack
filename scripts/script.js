@@ -4,13 +4,14 @@ window.onload = function (e) {
     canvas.setAttribute("height", getComputedStyle(canvas)["height"])
     canvas.setAttribute("width", getComputedStyle(canvas)["width"])
 
-    let jigsaw = document.getElementById("jigsaw")
-    ctx.drawImage(jigsaw, 160, 200, 10, 10)
+ 
 
    
     ctx.font = "50px Arial";
     ctx.fillText("Do you wanna play a game?", 150, 200)
     ctx.fillText("Please hit the deal button to start.", 110, 280)
+    let jigsaw = document.getElementById("jigsaw")
+    ctx.drawImage(jigsaw, canvas.width / 2 - 60, 300, 100, 100)
     
 
     
@@ -45,10 +46,11 @@ console.log(deck())
 const cardPics = deck().map((cards) => {
     return `${cards}.png`
 })
-const dealerCard1 = deck()[Math.floor(Math.random() * deck().length)]
-const dealerCard2 = deck()[Math.floor(Math.random() * deck().length)]
-const playerCard1= deck()[Math.floor(Math.random() * deck().length)]
-const playerCard2= deck()[Math.floor(Math.random() * deck().length)]
+// const dealerCard1 = deck()[Math.floor(Math.random() * deck().length)]
+// const dealerCard2 = deck()[Math.floor(Math.random() * deck().length)]
+// const playerCard1 = deck()[Math.floor(Math.random() * deck().length)]
+// const playerCard2 = deck()[Math.floor(Math.random() * deck().length)]
+// const playerCard3 = deck()[Math.floor(Math.random() * deck().length)]
 
 
 
@@ -72,7 +74,32 @@ function dealButton () {
 const deal = document.querySelector("#deal")
 deal.addEventListener("click", dealButton)
 
+function hitButton () {
+    const canvas = document.getElementById("canvas")
+    const ctx = canvas.getContext("2d")
 
+    if (playerTotal < 21) {
+        for (let i = 0; i < deck.length; i++) {
+            let img = document.getElementById(dealerCard1)
+            let img2 = document.getElementById(dealerCard2)
+            let img3 = document.getElementById(playerCard1)
+            let img4 = document.getElementById(playerCard2)
+            let img5 = document.getElementById(playerCard3)
+            ctx.drawImage(img, (canvas.width / 2) - 100, 10, 100, 140)
+            ctx.drawImage(img2, (canvas.width / 2) + 10, 10, 100, 140)
+            ctx.drawImage(img3, (canvas.width / 2) -100, canvas.height - 160, 100, 140)
+            ctx.drawImage(img4, (canvas.width / 2) + 10, canvas.height - 160, 100, 140)
+            ctx.drawImage(img5, (canvas.width / 2) + 110, canvas.height - 160, 100, 140)
+            
+        }
+    }
+    
+   
+}
+
+
+const hit = document.querySelector("#hit")
+hit.addEventListener("click", hitButton)
 
 
 
