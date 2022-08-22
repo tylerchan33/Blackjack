@@ -4,10 +4,15 @@ window.onload = function (e) {
     canvas.setAttribute("height", getComputedStyle(canvas)["height"])
     canvas.setAttribute("width", getComputedStyle(canvas)["width"])
 
+    let jigsaw = document.getElementById("jigsaw")
+    ctx.drawImage(jigsaw, 160, 200, 10, 10)
+
    
     ctx.font = "50px Arial";
     ctx.fillText("Do you wanna play a game?", 150, 200)
     ctx.fillText("Please hit the deal button to start.", 110, 280)
+    
+
     
   
 
@@ -61,7 +66,7 @@ function dealButton () {
     ctx.drawImage(img2, (canvas.width / 2) + 10, 10, 100, 140)
     ctx.drawImage(img3, (canvas.width / 2) -100, canvas.height - 160, 100, 140)
     ctx.drawImage(img4, (canvas.width / 2) + 10, canvas.height - 160, 100, 140)
-
+    
 }
 
 const deal = document.querySelector("#deal")
@@ -118,10 +123,22 @@ deal.addEventListener("click", dealButton)
     // })
    
 function winCondition () {
-   
-    let dealerTotal = 21
-    if (dealerTotal = 21) {
+   let ace = 11
+    console.log(ace)
+    let playerTotal = 21
+    playerCards = [11, 10]
+    let dealerTotal = 0
+    if (dealerTotal === 21) {
         gameStatus.innerText = "Dealer has blackjack!"
+        gameOver = true
+    }
+    if (playerTotal > 21 && playerCards.includes("ace")){
+        let ace = 1
+        console.log(ace)
+    }
+    if (playerTotal = 21 && (playerCards.length = 2)) {
+        console.log("Player has blackjack!")
+        gameOver = true
     }
     
 }
