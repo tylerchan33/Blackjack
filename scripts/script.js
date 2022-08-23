@@ -403,18 +403,20 @@ function playerTotal () {
         playerCardValues[i] = cards[playerCards[i]].value
         playerTotals += playerCardValues[i]
     }
+    gameStatus()
     return playerTotals
+    
 }
 playerTotal ()
 
 function dealerTotal () {
-    let dealerTotals = 0
+    let dealerScores = 0
     let dealerCardValues = []
     for (let i = 0; i < dealerCards.length; i++) {
         dealerCardValues[i] = cards[dealerCards[i]].value
-        dealerTotals += dealerCardValues[i]
+        dealerScores += dealerCardValues[i]
     }
-    return dealerTotals
+    return dealerScores
 }
 dealerTotal ()
 
@@ -430,19 +432,25 @@ function gameStatus () {
         gameOver = true
         
     }
-    else if (playerScore > 21 && playerCards.includes("ace")) {
-        let ace = 1
-    }
     else if (playerScore == 21 && (playerCards.length == 2)) {
         console.log("Player has blackjack!")
         result.innerText = "You have blackjack! You win!"
         gameOver = true
+    }
+    else if (playerScore > 21 && playerCards.includes("ace")) {
+        let ace = 1
     }
     else if (playerScore > 21) {
         gameOver = true
         document.getElementById("hit").disabled = true
         document.getElementById("stay").disabled = true
         result.innerText = "You busted! Dealer wins!"
+    }
+    else if (dealerScore > 21) {
+        gameOver = true
+        document.getElementById("hit").disabled = true
+        document.getElementById("stay").disabled = true
+        result.innerText = "Dealer busted! You win!"
     }
 }
 gameStatus ()
@@ -615,15 +623,31 @@ function stayButton () {
     gameInProgress = true
     playerTurn = false
     document.getElementById("hit").disabled = true
-    let dealerCard3 = newDeck.shift()
-    dealerCards.push(dealerCard3)
-    let img300 = document.getElementById(dealerCard3)
-    ctx.drawImage(img300, (canvas.width / 2) + 130, 10, 100, 140)
+    // let dealerCard3 = newDeck.shift()
+    // dealerCards.push(dealerCard3)
+    // let img300 = document.getElementById(dealerCard3)
+    // ctx.drawImage(img300, (canvas.width / 2) + 130, 10, 100, 140)
     
 }
 const stay = document.querySelector("#stay")
 stay.addEventListener("click", stayButton)
 
+function dealerTurn () {
+    const canvas = document.getElementById("canvas")
+    const ctx = canvas.getContext("2d")
+    gameInProgress = true
+    let dealerScore = dealerTotal ()
+    if (playerTurn = false) {
+        if (dealerScore < 17) {
+            let dealerCard11 = newDeck.shift()
+            dealerCards.push(dealerCard11)
+            let img130 = document.getElementById(dealerCard11)
+            ctx.drawImage(img130,(canvas.width / 2) + 290, canvas.height - 300, 100, 140)
+            this.removeEventListener("click", hitButton)
+            document.getElementById("hit").disabled = true
+        }
+    }
+}
 
 
 
