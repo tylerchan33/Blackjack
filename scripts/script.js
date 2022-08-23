@@ -14,272 +14,271 @@ window.onload = function (e) {
     
 }   
 
-const cards = {
-    aceOfClubs: {
+const aceOfClubs = {
         name: "aceOfClubs",
         src: "../media/ace_of_clubs.png",
         value: 11,
-    },
-    twoOfClubs: {
+    }
+const twoOfClubs = {
         name: "2OfClubs",
         src: "../media/2_of_clubs.png",
         value: 2,
         // console.log(cards["twoOfClubs"]["src"])
-    },
-    threeOfClubs: {
+    }
+const threeOfClubs = {
         name: "3OfClubs",
         src: "../media/3_of_clubs.png",
         value: 3,
-    },
-    fourOfClubs: {
+    }
+const fourOfClubs = {
         name: "4OfClubs",
         src: "../media/4_of_clubs.png",
         value: 4,
-    },
-    fiveOfClubs: {
+    }
+const fiveOfClubs = {
         name: "5OfClubs",
         src: "../media/5_of_clubs.png",
         value: 5,
-    },
-    sixOfClubs: {
+    }
+const sixOfClubs = {
         name: "6OfClubs",
         src: "../media/6_of_clubs.png",
         value: 6,
-    },
-    sevenOfClubs: {
+    }
+const sevenOfClubs = {
         name: "7OfClubs",
         src: "../media/7_of_clubs.png",
         value: 7,
-    },
-    eightOfClubs: {
+    }
+const eightOfClubs = {
         name: "8OfClubs",
         src: "../media/8_of_clubs.png",
         value: 8,
-    },
-    nineOfClubs: {
+    }
+const nineOfClubs = {
         name: "9OfClubs",
         src: "../media/9_of_clubs.png",
         value: 9,
-    },
-    tenOfClubs: {
+    }
+const tenOfClubs = {
         name: "10OfClubs",
         src: "../media/9_of_clubs.png",
         value: 10,
-    },
-    jackOfClubs: {
+    }
+const jackOfClubs = {
         name: "jackOfClubs",
         src: "../media/jack_of_clubs.png",
         value: 10,
-    },
-    queenOfClubs: {
+    }
+const queenOfClubs = {
         name: "queenOfClubs",
         src: "../media/queen_of_clubs.png",
         value: 10,
-    },
-    kingOfClubs: {
+    }
+const kingOfClubs = {
         name: "kingOfClubs",
         src: "../media/king_of_clubs.png",
         value: 10,
-    },
-    aceOfDiamonds: {
+    }
+const aceOfDiamonds = {
         name: "aceOfDiamonds",
         src: "../media/ace_of_diamonds.png",
         value: 11,
-    },
-    twoOfDiamonds: {
+    }
+const twoOfDiamonds = {
         name: "2OfDiamonds",
         src: "../media/2_of_diamonds.png",
         value: 2,
         
-    },
-    threeOfDiamonds: {
+    }
+const threeOfDiamonds = {
         name: "3OfDiamonds",
         src: "../media/3_of_diamonds.png",
         value: 3,
-    },
-    fourOfDiamonds: {
+    }
+const fourOfDiamonds = {
         name: "4OfDiamonds",
         src: "../media/4_of_diamonds.png",
         value: 4,
-    },
-    fiveOfDiamonds: {
+    }
+const fiveOfDiamonds = {
         name: "5OfDiamonds",
         src: "../media/5_of_diamonds.png",
         value: 5,
-    },
-    sixOfDiamonds: {
+    }
+const sixOfDiamonds = {
         name: "6OfDiamonds",
         src: "../media/6_of_diamonds.png",
         value: 6,
-    },
-    sevenOfDiamonds: {
+    }
+const sevenOfDiamonds = {
         name: "7OfDiamonds",
         src: "../media/7_of_diamonds.png",
         value: 7,
-    },
-    eightOfDiamonds: {
+    }
+const eightOfDiamonds = {
         name: "8OfDiamonds",
         src: "../media/8_of_diamonds.png",
         value: 8,
-    },
-    nineOfDiamonds: {
+    }
+const nineOfDiamonds = {
         name: "9OfDiamonds",
         src: "../media/9_of_diamonds.png",
         value: 9,
-    },
-    tenOfDiamonds: {
+    }
+const tenOfDiamonds = {
         name: "10OfDiamonds",
         src: "../media/9_of_diamonds.png",
         value: 10,
-    },
-    jackOfDiamonds: {
+    }
+const jackOfDiamonds = {
         name: "jackOfDiamonds",
         src: "../media/jack_of_diamonds.png",
         value: 10,
-    },
-    queenOfDiamonds: {
+    }
+const queenOfDiamonds = {
         name: "queenOfDiamonds",
         src: "../media/queen_of_diamonds.png",
         value: 10,
-    },
-    kingOfDiamonds: {
+    }
+const kingOfDiamonds = {
         name: "kingOfDiamonds",
         src: "../media/king_of_diamonds.png",
         value: 10,
-    }, 
-    aceOfHearts: {
+    }
+const aceOfHearts = {
         name: "aceOfHearts",
         src: "../media/ace_of_hearts.png",
         value: 11,
-    },
-    twoOfHearts: {
+    }
+const twoOfHearts = {
         name: "2OfHearts",
         src: "../media/2_of_hearts.png",
         value: 2,
         
-    },
-    threeOfHearts: {
+    }
+const threeOfHearts = {
         name: "3OfHearts",
         src: "../media/3_of_hearts.png",
         value: 3,
-    },
-    fourOfHearts: {
+        }
+const fourOfHearts = {
         name: "4OfHearts",
         src: "../media/4_of_hearts.png",
         value: 4,
-    },
-    fiveOfHearts: {
+        }
+const fiveOfHearts = {
         name: "5OfHearts",
         src: "../media/5_of_hearts.png",
         value: 5,
-    },
-    sixOfHearts: {
+        }
+const sixOfHearts = {
         name: "6OfHearts",
         src: "../media/6_of_hearts.png",
         value: 6,
-    },
-    sevenOfHearts: {
+        }
+const sevenOfHearts = {
         name: "7OfHearts",
         src: "../media/7_of_hearts.png",
         value: 7,
-    },
-    eightOfHearts: {
+        }
+const eightOfHearts = {
         name: "8OfHearts",
         src: "../media/8_of_hearts.png",
         value: 8,
-    },
-    nineOfHearts: {
+        }
+const nineOfHearts = {
         name: "9OfHearts",
         src: "../media/9_of_hearts.png",
         value: 9,
-    },
-    tenOfHearts: {
+        }
+const tenOfHearts = {
         name: "10OfHearts",
         src: "../media/9_of_hearts.png",
         value: 10,
-    },
-    jackOfHearts: {
+        }
+const jackOfHearts = {
         name: "jackOfHearts",
         src: "../media/jack_of_hearts.png",
         value: 10,
-    },
-    queenOfHearts: {
+        }
+const queenOfHearts = {
         name: "queenOfHearts",
         src: "../media/queen_of_hearts.png",
         value: 10,
-    },
-    kingOfHearts: {
+        }
+const kingOfHearts = {
         name: "kingOfHearts",
         src: "../media/king_of_hearts.png",
         value: 10,
-    }, 
-    aceOfSpades: {
+        } 
+const aceOfSpades = {
         name: "aceOfSpades",
         src: "../media/ace_of_spades.png",
         value: 11,
-    },
-    twoOfSpades: {
+        }
+const twoOfSpades = {
         name: "2OfSpades",
         src: "../media/2_of_spades.png",
         value: 2,
         
-    },
-    threeOfSpades: {
+        }
+const threeOfSpades = {
         name: "3OfSpades",
         src: "../media/3_of_spades.png",
         value: 3,
-    },
-    fourOfSpades: {
+        }
+const fourOfSpades = {
         name: "4OfSpades",
         src: "../media/4_of_spades.png",
         value: 4,
-    },
-    fiveOfSpades: {
+        }
+const fiveOfSpades = {
         name: "5OfSpades",
         src: "../media/5_of_spades.png",
         value: 5,
-    },
-    sixOfSpades: {
+        }
+const  sixOfSpades = {
         name: "6OfSpades",
         src: "../media/6_of_spades.png",
         value: 6,
-    },
-    sevenOfSpades: {
+        }
+const sevenOfSpades = {
         name: "7OfSpades",
         src: "../media/7_of_spades.png",
         value: 7,
-    },
-    eightOfSpades: {
+        }
+const eightOfSpades = {
         name: "8OfSpades",
         src: "../media/8_of_spades.png",
         value: 8,
-    },
-    nineOfSpades: {
+        }
+const nineOfSpades = {
         name: "9OfSpades",
         src: "../media/9_of_spades.png",
         value: 9,
-    },
-    tenOfSpades: {
+        }
+const tenOfSpades = {
         name: "10OfSpades",
         src: "../media/9_of_spades.png",
         value: 10,
-    },
-    jackOfSpades: {
+        }
+const jackOfSpades = {
         name: "jackOfSpades",
         src: "../media/jack_of_spades.png",
         value: 10,
-    },
-    queenOfSpades: {
+        }
+const queenOfSpades = {
         name: "queenOfSpades",
         src: "../media/queen_of_spades.png",
         value: 10,
-    },
-    kingOfSpades: {
+        }
+const  kingOfSpades = {
         name: "kingOfSpades",
         src: "../media/king_of_spades.png",
         value: 10,
-    }, 
-}
+        }
+
 
 
 
@@ -555,9 +554,12 @@ function playerTotal () {
     for (let i = 0; i < playerCards.length; i++) {
         // let card = `${cardNames[i]}Of${cardSuits[j]}`
         // produces 2OfClubs
-        playerCardValues.push(playerCards[i])
+       
+        
+        
         // let playerCardsValue = cards[`"${playerCards[i]}"`]["value"]
         // playerTotals += playerCardsValue[i]
+        
 
     }
     return playerCardValues
