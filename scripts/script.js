@@ -572,24 +572,25 @@ function dealerTotal () {
 dealerTotal ()
 
 
-// function gameStatus () {
-//     for (let i = 0; i < dealerTotal.length; i++) {
-//     dealerTotal += dealerTotal[i]
-//     }
-//      if (dealerTotal === 21) {
-//          gameStatus.innerText = "Dealer has blackjack!"
-//          gameOver = true
-//      }
-//      if (playerTotal > 21 && playerCards.includes("ace")){
-//          let ace = 1
-//          console.log(ace)
-//      }
-//      if (playerTotal = 21 && (playerCards.length = 2)) {
-//          console.log("Player has blackjack!")
-//          gameOver = true
-//      }
+function gameStatus () {
+     if (dealerTotal === 21) {
+         gameStatus.innerText = "Dealer has blackjack!"
+         gameOver = true
+     }
+    //  if (playerTotal > 21 && playerCards.includes("ace")){
+    //      let ace = 1
+    //      console.log(ace)
      
-//  }
+     if (playerTotal = 21 && (playerCards.length = 2)) {
+         console.log("Player has blackjack!")
+         gameOver = true
+     }
+     if (playerTotal > 21) {
+        gameOver = true
+     }
+    }
+    
+ 
 
 // gameStatus ()
 // console.log(dealerTotal)
