@@ -44,22 +44,21 @@ button {
     height: 100px;  
     width: 100px;
     margin-left: 20px;  
+    border: 2px solid black;
 }
 
 .buttons {
     margin-top: 25px;
-   
     display: flex;
     justify-content: center;
 }
 
 #hit {
     background-color: blue;    
-    border: 2px solid black;
 }
 #deal {
     background-color: green;
-    border: 2px solid black;
+    
 }
 #result {
     text-align: center;

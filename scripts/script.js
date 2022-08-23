@@ -6,14 +6,11 @@ window.onload = function (e) {
     document.getElementById("hit").disabled = true
     document.getElementById("stay").disabled = true
 
- 
-
-   
-    ctx.font = "50px Arial";
-    ctx.fillText("Do you wanna play a game?", 150, 200)
-    ctx.fillText("Please hit the deal button to start.", 110, 280)
+    ctx.font = "50px Arial"
+    ctx.fillText("Do you wanna play a game?", (canvas.width / 2) - 300, 200)
+    ctx.fillText("Please hit the deal button to start.", (canvas.width / 2) - 350, 280)
     let jigsaw = document.querySelector("#jigsaw")
-    ctx.drawImage(jigsaw, canvas.width / 2 - 60, 300, 100, 100)
+    ctx.drawImage(jigsaw, canvas.width / 2 - 70, 300, 200, 100)
     
 }   
 
@@ -21,7 +18,7 @@ const cards = {
     aceOfClubs: {
         name: "aceOfClubs",
         src: "../media/ace_of_clubs.png",
-        value: 1,
+        value: 11,
     },
     twoOfClubs: {
         name: "2OfClubs",
@@ -87,7 +84,7 @@ const cards = {
     aceOfDiamonds: {
         name: "aceOfDiamonds",
         src: "../media/ace_of_diamonds.png",
-        value: 1,
+        value: 11,
     },
     twoOfDiamonds: {
         name: "2OfDiamonds",
@@ -153,7 +150,7 @@ const cards = {
     aceOfHearts: {
         name: "aceOfHearts",
         src: "../media/ace_of_hearts.png",
-        value: 1,
+        value: 11,
     },
     twoOfHearts: {
         name: "2OfHearts",
@@ -219,7 +216,7 @@ const cards = {
     aceOfSpades: {
         name: "aceOfSpades",
         src: "../media/ace_of_spades.png",
-        value: 1,
+        value: 11,
     },
     twoOfSpades: {
         name: "2OfSpades",
@@ -283,19 +280,20 @@ const cards = {
         value: 10,
     }, 
 }
-let test2 = document.querySelector("#twoOfClubs").value
+
+
+
 let gameInProgress = false
 let playerTurn = true
 let gameOver = false
 let dealerCards = []
 let playerCards = []
-let dealerTotal = 0
-let playerTotal = 0
-const gameStatus = document.getElementById("result")
+
+// const gameStatus = document.getElementById("result")
    
 function deck () {
     let allCards = []
-    let cardNames = ["ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "jack", "queen", "king"]
+    let cardNames = ["ace", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "jack", "queen", "king"]
     let cardSuits = ["Diamonds", "Clubs", "Hearts", "Spades"]
     let fullDeck = []
     for (let i = 0; i < cardNames.length; i++) {
@@ -374,7 +372,7 @@ function dealButton () {
     playerCards.push(playerCard1)
     playerCards.push(playerCard2)
 
-    console.log(dealerCards)
+    console.log(playerCards)
     // const playerCard3 = deck.shift([Math.floor(Math.random() * deck().length)])
     if (gameInProgress = true) {
         document.getElementById("deal").disabled = true
@@ -404,9 +402,10 @@ function hitButton (e) {
         playerCards.push(playerCard3)
         let img5= document.getElementById(playerCard3)
         ctx.drawImage(img5, (canvas.width / 2) + 130, canvas.height - 160, 100, 140)
-        e.stopImmediatePropagation()
         this.removeEventListener("click", hitButton)
-        document.onclick = secondHit    
+        let hit = document.querySelector("#hit")
+        hit.onclick = secondHit    
+        e.stopImmediatePropagation()
     }
 }
 
@@ -418,9 +417,10 @@ function secondHit (e) {
         playerCards.push(playerCard4)
         let img6 = document.getElementById(playerCard4)
         ctx.drawImage(img6,(canvas.width / 2) + 150, canvas.height - 160, 100, 140)
+        this.removeEventListener("click", secondHit)
+        let hit = document.querySelector("#hit")
+        hit.onclick = thirdHit    
         e.stopImmediatePropagation()
-        this.removeEventListener("click", hitButton)
-        document.onclick = thirdHit    
     }
 }
 
@@ -432,9 +432,10 @@ function thirdHit (e) {
         playerCards.push(playerCard5)
         let img7 = document.getElementById(playerCard5)
         ctx.drawImage(img7,(canvas.width / 2) + 170, canvas.height - 160, 100, 140)
+        this.removeEventListener("click", thirdHit)
+        let hit = document.querySelector("#hit")
+        hit.onclick = fourthHit 
         e.stopImmediatePropagation()
-        this.removeEventListener("click", hitButton)
-        document.onclick = fourthHit 
     }
 }
 
@@ -446,9 +447,10 @@ function fourthHit (e) {
         playerCards.push(playerCard6)
         let img8 = document.getElementById(playerCard6)
         ctx.drawImage(img8,(canvas.width / 2) + 190, canvas.height - 160, 100, 140)
+        this.removeEventListener("click", fourthHit)
+        let hit = document.querySelector("#hit")
+        hit.onclick = fifthHit  
         e.stopImmediatePropagation()
-        this.removeEventListener("click", hitButton)
-        document.onclick = fifthHit  
     } 
 }
 function fifthHit (e) {
@@ -459,9 +461,10 @@ function fifthHit (e) {
         playerCards.push(playerCard7)
         let img9 = document.getElementById(playerCard7)
         ctx.drawImage(img9,(canvas.width / 2) + 210, canvas.height - 160, 100, 140)
+        this.removeEventListener("click", fifthHit)
+        let hit = document.querySelector("#hit")
+        hit.onclick = sixthHit    
         e.stopImmediatePropagation()
-        this.removeEventListener("click", hitButton)
-        document.onclick = sixthHit    
     }
 }
 function sixthHit (e) {
@@ -472,9 +475,10 @@ function sixthHit (e) {
         playerCards.push(playerCard8)
         let img10 = document.getElementById(playerCard8)
         ctx.drawImage(img10,(canvas.width / 2) + 230, canvas.height - 160, 100, 140)
+        this.removeEventListener("click", sixthHit)
+        let hit = document.querySelector("#hit")
+        hit.onclick = seventhHit   
         e.stopImmediatePropagation()
-        this.removeEventListener("click", hitButton)
-        document.onclick = seventhHit   
     } 
 }
 function seventhHit (e) {
@@ -485,9 +489,10 @@ function seventhHit (e) {
         playerCards.push(playerCard9)
         let img11 = document.getElementById(playerCard9)
         ctx.drawImage(img11,(canvas.width / 2) + 250, canvas.height - 160, 100, 140)
+        this.removeEventListener("click", seventhHit)
+        let hit = document.querySelector("#hit")
+        hit.onclick = eighthHit    
         e.stopImmediatePropagation()
-        this.removeEventListener("click", hitButton)
-        document.onclick = eighthHit    
     }
     
 }
@@ -499,9 +504,10 @@ function eighthHit (e) {
         playerCards.push(playerCard10)
         let img12 = document.getElementById(playerCard10)
         ctx.drawImage(img12,(canvas.width / 2) + 270, canvas.height - 160, 100, 140)
-        e.stopImmediatePropagation()
         this.removeEventListener("click", hitButton)
-        document.onclick = ninthHit   
+        let hit = document.querySelector("#hit")
+        hit.onclick = ninthHit   
+        e.stopImmediatePropagation()
     } 
 }
 function ninthHit (e) {
@@ -512,9 +518,10 @@ function ninthHit (e) {
         playerCards.push(playerCard11)
         let img13 = document.getElementById(playerCard11)
         ctx.drawImage(img13,(canvas.width / 2) + 290, canvas.height - 160, 100, 140)
-        e.stopImmediatePropagation()
         this.removeEventListener("click", hitButton)
         document.getElementById("hit").disabled = true
+        e.stopImmediatePropagation()
+        
     }
         
 }
@@ -527,13 +534,61 @@ function ninthHit (e) {
 const hit = document.querySelector("#hit")
 hit.addEventListener("click", hitButton)
 
-function stayButton () {
- 
-    console.log("hello")
+function stayButton () { 
+    const canvas = document.getElementById("canvas")
+    const ctx = canvas.getContext("2d")
+    gameInProgress = true
+    playerTurn = false
+    document.getElementById("hit").disabled = true
+    let dealerCard3 = newDeck.shift()
+    dealerCards.push(dealerCard3)
+    let img300 = document.getElementById(dealerCard3)
+    ctx.drawImage(img300, (canvas.width / 2) + 130, 10, 100, 140)
     
 }
 const stay = document.querySelector("#stay")
 stay.addEventListener("click", stayButton)
+
+function playerTotal () {
+    let playerTotals = 0
+    let playerCardValues = []
+    for (let i = 0; i < playerCards.length; i++) {
+        // let card = `${cardNames[i]}Of${cardSuits[j]}`
+        // produces 2OfClubs
+        playerCardValues.push(playerCards[i])
+        // let playerCardsValue = cards[`"${playerCards[i]}"`]["value"]
+        // playerTotals += playerCardsValue[i]
+
+    }
+    return playerCardValues
+}
+playerTotal ()
+
+
+// function gameStatus () {
+//     for (let i = 0; i < dealerTotal.length; i++) {
+//     dealerTotal += dealerTotal[i]
+//     }
+//      if (dealerTotal === 21) {
+//          gameStatus.innerText = "Dealer has blackjack!"
+//          gameOver = true
+//      }
+//      if (playerTotal > 21 && playerCards.includes("ace")){
+//          let ace = 1
+//          console.log(ace)
+//      }
+//      if (playerTotal = 21 && (playerCards.length = 2)) {
+//          console.log("Player has blackjack!")
+//          gameOver = true
+//      }
+     
+//  }
+
+// gameStatus ()
+// console.log(dealerTotal)
+//  function gameLoop () {
+
+//  }
 
 
 
@@ -582,26 +637,7 @@ stay.addEventListener("click", stayButton)
     //     }
     // })
    
-// function winCondition () {
-//    let ace = 11
-//     console.log(ace)
-//     let playerTotal = 21
 
-//     let dealerTotal = 0
-//     if (dealerTotal === 21) {
-//         gameStatus.innerText = "Dealer has blackjack!"
-//         gameOver = true
-//     }
-//     if (playerTotal > 21 && playerCards.includes("ace")){
-//         let ace = 1
-//         console.log(ace)
-//     }
-//     if (playerTotal = 21 && (playerCards.length = 2)) {
-//         console.log("Player has blackjack!")
-//         gameOver = true
-//     }
-    
-// }
 
 // winCondition()
 
