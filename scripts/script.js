@@ -3,6 +3,8 @@ window.onload = function (e) {
     const ctx = canvas.getContext("2d")
     canvas.setAttribute("height", getComputedStyle(canvas)["height"])
     canvas.setAttribute("width", getComputedStyle(canvas)["width"])
+    document.getElementById("hit").disabled = true
+    document.getElementById("stay").disabled = true
 
  
 
@@ -12,6 +14,7 @@ window.onload = function (e) {
     ctx.fillText("Please hit the deal button to start.", 110, 280)
     let jigsaw = document.querySelector("#jigsaw")
     ctx.drawImage(jigsaw, canvas.width / 2 - 60, 300, 100, 100)
+    
 }   
 
 const cards = {
@@ -282,6 +285,7 @@ const cards = {
 }
 let test2 = document.querySelector("#twoOfClubs").value
 let gameInProgress = false
+let playerTurn = true
 let gameOver = false
 let dealerCards = []
 let playerCards = []
@@ -359,15 +363,23 @@ function dealButton () {
     canvas.setAttribute("width", getComputedStyle(canvas)["width"])
     let gameInProgress = true
    
+   
     let dealerCard1 = newDeck.shift()
     let dealerCard2 = newDeck.shift()
     let playerCard1 = newDeck.shift()
     let playerCard2 = newDeck.shift()
 
-    console.log(dealerCard1)
+    dealerCards.push(dealerCard1)
+    dealerCards.push(dealerCard2)
+    playerCards.push(playerCard1)
+    playerCards.push(playerCard2)
+
+    console.log(dealerCards)
     // const playerCard3 = deck.shift([Math.floor(Math.random() * deck().length)])
     if (gameInProgress = true) {
-        document.getElementById("deal").disabled = "true"
+        document.getElementById("deal").disabled = true
+        document.getElementById("hit").disabled = false
+        document.getElementById("stay").disabled = false
     }
     let img = document.getElementById(dealerCard1)
     let img2 = document.getElementById(dealerCard2)
@@ -387,95 +399,123 @@ deal.addEventListener("click", dealButton)
 function hitButton (e) {
     const canvas = document.getElementById("canvas")
     const ctx = canvas.getContext("2d")
+    if (playerTurn === true) {
         let playerCard3 = newDeck.shift()
+        playerCards.push(playerCard3)
         let img5= document.getElementById(playerCard3)
         ctx.drawImage(img5, (canvas.width / 2) + 130, canvas.height - 160, 100, 140)
-
         e.stopImmediatePropagation()
         this.removeEventListener("click", hitButton)
         document.onclick = secondHit    
+    }
 }
 
 function secondHit (e) {
     const canvas = document.getElementById("canvas")
     const ctx = canvas.getContext("2d")
+    if (playerTurn === true) {
         let playerCard4 = newDeck.shift()
+        playerCards.push(playerCard4)
         let img6 = document.getElementById(playerCard4)
         ctx.drawImage(img6,(canvas.width / 2) + 150, canvas.height - 160, 100, 140)
         e.stopImmediatePropagation()
         this.removeEventListener("click", hitButton)
         document.onclick = thirdHit    
+    }
 }
 
 function thirdHit (e) {
     const canvas = document.getElementById("canvas")
     const ctx = canvas.getContext("2d")
+    if (playerTurn === true) {
         let playerCard5 = newDeck.shift()
+        playerCards.push(playerCard5)
         let img7 = document.getElementById(playerCard5)
         ctx.drawImage(img7,(canvas.width / 2) + 170, canvas.height - 160, 100, 140)
         e.stopImmediatePropagation()
         this.removeEventListener("click", hitButton)
         document.onclick = fourthHit 
+    }
 }
 
 function fourthHit (e) {
     const canvas = document.getElementById("canvas")
     const ctx = canvas.getContext("2d")
+    if (playerTurn === true) {
         let playerCard6 = newDeck.shift()
+        playerCards.push(playerCard6)
         let img8 = document.getElementById(playerCard6)
         ctx.drawImage(img8,(canvas.width / 2) + 190, canvas.height - 160, 100, 140)
         e.stopImmediatePropagation()
         this.removeEventListener("click", hitButton)
-        document.onclick = fifthHit   
+        document.onclick = fifthHit  
+    } 
 }
 function fifthHit (e) {
     const canvas = document.getElementById("canvas")
     const ctx = canvas.getContext("2d")
+    if (playerTurn === true) {
         let playerCard7 = newDeck.shift()
+        playerCards.push(playerCard7)
         let img9 = document.getElementById(playerCard7)
         ctx.drawImage(img9,(canvas.width / 2) + 210, canvas.height - 160, 100, 140)
         e.stopImmediatePropagation()
         this.removeEventListener("click", hitButton)
         document.onclick = sixthHit    
+    }
 }
 function sixthHit (e) {
     const canvas = document.getElementById("canvas")
     const ctx = canvas.getContext("2d")
+    if (playerTurn === true) {
         let playerCard8 = newDeck.shift()
+        playerCards.push(playerCard8)
         let img10 = document.getElementById(playerCard8)
         ctx.drawImage(img10,(canvas.width / 2) + 230, canvas.height - 160, 100, 140)
         e.stopImmediatePropagation()
         this.removeEventListener("click", hitButton)
-        document.onclick = seventhHit    
+        document.onclick = seventhHit   
+    } 
 }
 function seventhHit (e) {
     const canvas = document.getElementById("canvas")
     const ctx = canvas.getContext("2d")
+    if (playerTurn === true) {
         let playerCard9 = newDeck.shift()
+        playerCards.push(playerCard9)
         let img11 = document.getElementById(playerCard9)
         ctx.drawImage(img11,(canvas.width / 2) + 250, canvas.height - 160, 100, 140)
         e.stopImmediatePropagation()
         this.removeEventListener("click", hitButton)
         document.onclick = eighthHit    
+    }
+    
 }
 function eighthHit (e) {
     const canvas = document.getElementById("canvas")
     const ctx = canvas.getContext("2d")
+    if (playerTurn === true) {
         let playerCard10 = newDeck.shift()
+        playerCards.push(playerCard10)
         let img12 = document.getElementById(playerCard10)
         ctx.drawImage(img12,(canvas.width / 2) + 270, canvas.height - 160, 100, 140)
         e.stopImmediatePropagation()
         this.removeEventListener("click", hitButton)
-        document.onclick = ninthHit    
+        document.onclick = ninthHit   
+    } 
 }
 function ninthHit (e) {
     const canvas = document.getElementById("canvas")
     const ctx = canvas.getContext("2d")
+    if (playerTurn === true) {
         let playerCard11 = newDeck.shift()
+        playerCards.push(playerCard11)
         let img13 = document.getElementById(playerCard11)
         ctx.drawImage(img13,(canvas.width / 2) + 290, canvas.height - 160, 100, 140)
         e.stopImmediatePropagation()
-        document.getElementById("hit").disabled = "true"
+        this.removeEventListener("click", hitButton)
+        document.getElementById("hit").disabled = true
+    }
         
 }
     
@@ -487,6 +527,13 @@ function ninthHit (e) {
 const hit = document.querySelector("#hit")
 hit.addEventListener("click", hitButton)
 
+function stayButton () {
+ 
+    console.log("hello")
+    
+}
+const stay = document.querySelector("#stay")
+stay.addEventListener("click", stayButton)
 
 
 
@@ -535,28 +582,28 @@ hit.addEventListener("click", hitButton)
     //     }
     // })
    
-function winCondition () {
-   let ace = 11
-    console.log(ace)
-    let playerTotal = 21
-    playerCards = [11, 10]
-    let dealerTotal = 0
-    if (dealerTotal === 21) {
-        gameStatus.innerText = "Dealer has blackjack!"
-        gameOver = true
-    }
-    if (playerTotal > 21 && playerCards.includes("ace")){
-        let ace = 1
-        console.log(ace)
-    }
-    if (playerTotal = 21 && (playerCards.length = 2)) {
-        console.log("Player has blackjack!")
-        gameOver = true
-    }
-    
-}
+// function winCondition () {
+//    let ace = 11
+//     console.log(ace)
+//     let playerTotal = 21
 
-winCondition()
+//     let dealerTotal = 0
+//     if (dealerTotal === 21) {
+//         gameStatus.innerText = "Dealer has blackjack!"
+//         gameOver = true
+//     }
+//     if (playerTotal > 21 && playerCards.includes("ace")){
+//         let ace = 1
+//         console.log(ace)
+//     }
+//     if (playerTotal = 21 && (playerCards.length = 2)) {
+//         console.log("Player has blackjack!")
+//         gameOver = true
+//     }
+    
+// }
+
+// winCondition()
 
   
     
