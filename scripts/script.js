@@ -316,24 +316,13 @@ function deck () {
     
     
 }
-
-deck()
-console.log(deck())
-
-
-
 let fullDeck = deck()
-
-
 let deckTest = deck()[Math.floor(Math.random() * deck().length)]
 console.log(deckTest)
-
-
 const cardPics = deck().map((cards) => {
     return `${cards}.png`
 })
 
-console.log(cardPics)
 
 // found the fisher-yates shuffle online
 
@@ -353,6 +342,20 @@ shuffleDeck(fullDeck)
 let newDeck = shuffleDeck(fullDeck)
 console.log(newDeck)
 
+function newGame () {
+    let playerScore = playerTotal()
+    playerScore = 0
+    let dealerScore = dealerTotal()
+    dealerScore = 0
+    playerCards = []
+    dealerCards = []
+    result.innerText = " "
+    dealButton()
+}
+
+const newGameBtn = document.querySelector("#newGame")
+newGameBtn.addEventListener("click", newGame)
+
 
 
 function dealButton () {
@@ -360,6 +363,7 @@ function dealButton () {
     const ctx = canvas.getContext("2d")
     canvas.setAttribute("height", getComputedStyle(canvas)["height"])
     canvas.setAttribute("width", getComputedStyle(canvas)["width"])
+  
     gameInProgress = true
     gameLoop ()
    
@@ -390,6 +394,7 @@ function dealButton () {
     ctx.drawImage(img3, (canvas.width / 2) -100, canvas.height - 160, 100, 140)
     ctx.drawImage(img4, (canvas.width / 2) + 10, canvas.height - 160, 100, 140)
     gameStatus()
+    deal.style.display = "none"
     
 }
 
@@ -403,22 +408,21 @@ function playerTotal () {
         playerCardValues[i] = cards[playerCards[i]].value
         playerTotals += playerCardValues[i]
     }
-    gameStatus()
-    return playerTotals
-    
+    return playerTotals 
 }
 playerTotal ()
 
 function dealerTotal () {
-    let dealerScores = 0
+    let dealerTotals = 0
     let dealerCardValues = []
     for (let i = 0; i < dealerCards.length; i++) {
         dealerCardValues[i] = cards[dealerCards[i]].value
-        dealerScores += dealerCardValues[i]
+        dealerTotals += dealerCardValues[i]
     }
-    return dealerScores
+    return dealerTotals
 }
 dealerTotal ()
+
 
 
 
@@ -426,34 +430,49 @@ function gameStatus () {
     let dealerScore = dealerTotal ()
     let playerScore = playerTotal ()
     if (dealerScore == 21 && dealerCards.length == 2) {
-        document.getElementById("hit").disabled = true
         document.getElementById("stay").disabled = true
         result.innerText = "Dealer has blackjack!"
         gameOver = true
         
     }
     else if (playerScore == 21 && (playerCards.length == 2)) {
-        console.log("Player has blackjack!")
         result.innerText = "You have blackjack! You win!"
         gameOver = true
     }
-    else if (playerScore > 21 && playerCards.includes("ace")) {
-        let ace = 1
-    }
     else if (playerScore > 21) {
         gameOver = true
-        document.getElementById("hit").disabled = true
         document.getElementById("stay").disabled = true
         result.innerText = "You busted! Dealer wins!"
     }
     else if (dealerScore > 21) {
         gameOver = true
-        document.getElementById("hit").disabled = true
         document.getElementById("stay").disabled = true
         result.innerText = "Dealer busted! You win!"
     }
+    else if (playerTurn == false && dealerScore > playerScore) {
+        gameOver = true
+        document.getElementById("stay").disabled = true
+        result.innerText = "Dealer wins!"
+    }
+    else if (playerTurn == false && dealerScore < playerScore) {
+        gameOver = true
+        document.getElementById("stay").disabled = true
+        result.innerText = "You win!"
+    } else if (playerTurn == false && dealerScore == playerScore) {
+        gameOver = true
+        document.getElementById("stay").disabled = true
+        result.innerText = "Push!"
+    }
+    gameCheck()
 }
 gameStatus ()
+
+function gameCheck () {
+    if (gameOver = true) {
+        deal.style.display = "block"
+    }
+}
+
 
 function gameLoop () {
     gameStatus ()
@@ -627,27 +646,136 @@ function stayButton () {
     // dealerCards.push(dealerCard3)
     // let img300 = document.getElementById(dealerCard3)
     // ctx.drawImage(img300, (canvas.width / 2) + 130, 10, 100, 140)
+    dealerTurn1 ()
+    gameStatus ()
     
 }
 const stay = document.querySelector("#stay")
 stay.addEventListener("click", stayButton)
 
-function dealerTurn () {
+function dealerTurn1 () {
     const canvas = document.getElementById("canvas")
     const ctx = canvas.getContext("2d")
     gameInProgress = true
     let dealerScore = dealerTotal ()
-    if (playerTurn = false) {
-        if (dealerScore < 17) {
-            let dealerCard11 = newDeck.shift()
-            dealerCards.push(dealerCard11)
-            let img130 = document.getElementById(dealerCard11)
-            ctx.drawImage(img130,(canvas.width / 2) + 290, canvas.height - 300, 100, 140)
-            this.removeEventListener("click", hitButton)
-            document.getElementById("hit").disabled = true
-        }
+    if (playerTurn == false && dealerScore < 17) {
+            let dealerCard3 = newDeck.shift()
+            dealerCards.push(dealerCard3)
+            let img20= document.getElementById(dealerCard3)
+            ctx.drawImage(img20, (canvas.width / 2) + 130, 10, 100, 140)
+            
+    }
+    dealerTurn2()
+}
+
+dealerTurn1 ()
+
+function dealerTurn2 () {
+    const canvas = document.getElementById("canvas")
+    const ctx = canvas.getContext("2d")
+    gameInProgress = true
+    let dealerScore = dealerTotal ()
+    if (playerTurn == false && dealerScore < 17) {
+            let dealerCard4 = newDeck.shift()
+            dealerCards.push(dealerCard4)
+            let img21= document.getElementById(dealerCard4)
+            ctx.drawImage(img21, (canvas.width / 2) + 150, 10, 100, 140)
+    }
+    dealerTurn3 ()
+}
+
+function dealerTurn3 () {
+    const canvas = document.getElementById("canvas")
+    const ctx = canvas.getContext("2d")
+    gameInProgress = true
+    let dealerScore = dealerTotal ()
+    if (playerTurn == false && dealerScore < 17) {
+            let dealerCard5 = newDeck.shift()
+            dealerCards.push(dealerCard5)
+            let img22= document.getElementById(dealerCard5)
+            ctx.drawImage(img22, (canvas.width / 2) + 150, 10, 100, 140)
+    }
+    dealerTurn4 ()
+}
+
+function dealerTurn4 () {
+    const canvas = document.getElementById("canvas")
+    const ctx = canvas.getContext("2d")
+    gameInProgress = true
+    let dealerScore = dealerTotal ()
+    if (playerTurn == false && dealerScore < 17) {
+            let dealerCard6 = newDeck.shift()
+            dealerCards.push(dealerCard6)
+            let img23= document.getElementById(dealerCard6)
+            ctx.drawImage(img23, (canvas.width / 2) + 150, 10, 100, 140)
+    }
+    dealerTurn5 ()    
+}
+
+function dealerTurn5 () {
+    const canvas = document.getElementById("canvas")
+    const ctx = canvas.getContext("2d")
+    gameInProgress = true
+    let dealerScore = dealerTotal ()
+    if (playerTurn == false && dealerScore < 17) {
+            let dealerCard7 = newDeck.shift()
+            dealerCards.push(dealerCard7)
+            let img23= document.getElementById(dealerCard6)
+            ctx.drawImage(img23, (canvas.width / 2) + 150, 10, 100, 140)
+    }
+    dealerTurn6 ()    
+}
+
+function dealerTurn6 () {
+    const canvas = document.getElementById("canvas")
+    const ctx = canvas.getContext("2d")
+    gameInProgress = true
+    let dealerScore = dealerTotal ()
+    if (playerTurn == false && dealerScore < 17) {
+            let dealerCard8 = newDeck.shift()
+            dealerCards.push(dealerCard8)
+            let img24= document.getElementById(dealerCard8)
+            ctx.drawImage(img24, (canvas.width / 2) + 150, 10, 100, 140)
+    }
+    dealerTurn7 ()    
+}
+
+function dealerTurn7 () {
+    const canvas = document.getElementById("canvas")
+    const ctx = canvas.getContext("2d")
+    gameInProgress = true
+    let dealerScore = dealerTotal ()
+    if (playerTurn == false && dealerScore < 17) {
+            let dealerCard9 = newDeck.shift()
+            dealerCards.push(dealerCard9)
+            let img25= document.getElementById(dealerCard9)
+            ctx.drawImage(img25, (canvas.width / 2) + 150, 10, 100, 140)
+    }
+    dealerTurn8 ()    
+}
+
+function dealerTurn7 () {
+    const canvas = document.getElementById("canvas")
+    const ctx = canvas.getContext("2d")
+    gameInProgress = true
+    let dealerScore = dealerTotal ()
+    if (playerTurn == false && dealerScore < 17) {
+            let dealerCard10 = newDeck.shift()
+            dealerCards.push(dealerCard10)
+            let img26= document.getElementById(dealerCard10)
+            ctx.drawImage(img26, (canvas.width / 2) + 150, 10, 100, 140)
     }
 }
+
+
+
+
+
+
+
+
+
+
 
 
 

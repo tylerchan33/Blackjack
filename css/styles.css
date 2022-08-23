@@ -12,6 +12,9 @@ main {
     justify-content: center;
 
 }
+h1 {
+    margin-bottom: 0px;
+}
 
 #nameOfGame {
     text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
@@ -45,10 +48,11 @@ button {
     width: 100px;
     margin-left: 20px;  
     border: 2px solid black;
+    
 }
 
 .buttons {
-    margin-top: 25px;
+    margin-top: 10px;
     display: flex;
     justify-content: center;
 }
@@ -68,5 +72,11 @@ button {
 }
 
 #jigsaw {
+    display: none;
+}
+#newGame {
+    border-radius: 90%;
+    width: 200px;
+    margin-top: 0px;
     display: none;
 }
