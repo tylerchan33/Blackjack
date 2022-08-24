@@ -3,6 +3,7 @@ body {
     background-size: cover;
 }
 #nameOfGame {
+    margin-top: 0px;
     text-align: center;
     font-size: 50px;
     color: rgb(196, 6, 6)
@@ -25,8 +26,8 @@ canvas {
     background-size: cover;
     background-position: 0% 60%;
     border: 1px solid black;
-    width: 90%;
-    height: 90%;   
+    width: 70vw;
+    height: 60vh;  
 }
 
 .boxes {
@@ -71,6 +72,14 @@ button {
                 1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
 }
 
+#playerScore {
+    text-align: center;
+    color: red;
+    text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+                1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+    font-size: 20px;
+}
+
 #jigsaw {
     display: none;
 }
@@ -79,4 +88,8 @@ button {
     width: 200px;
     margin-top: 0px;
     
+}
+
+#dealerHidden {
+    display: none;
 }
