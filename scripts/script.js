@@ -7,6 +7,7 @@ window.onload = function (e) {
     document.getElementById("stay").disabled = true
 
     ctx.font = "50px Creepster"
+    ctx.fillStyle = "rgb(156, 22, 22)"
     ctx.fillText("Do you wanna play a game?", (canvas.width / 2) - 250, canvas.height / 2 - 100)
     ctx.fillText("Please hit the deal button to start.", (canvas.width / 2) - 350, canvas.height / 2 - 50)
     let jigsaw = document.querySelector("#jigsaw")
@@ -17,6 +18,8 @@ window.onload = function (e) {
     
     let playerScore = document.getElementById("playerTotal")
     playerScore.innerText = `Good luck! You start with $1000!`
+    let dealerScore = document.getElementById("result")
+    dealerScore.innerText = " "
 
     
 }   
@@ -353,7 +356,7 @@ function dealButton () {
     betAmount = betInput.value
     aceCount = 0
     if (moneyTracker === 0) {
-        playerScore.innerText = `You're broke!  Get out of here.`
+        playerScore.innerText = `You're broke!  Get out of here!!!`
         canvas.style.backgroundImage = "url('https://media2.giphy.com/media/yIxNOXEMpqkqA/giphy.gif?cid=ecf05e47rttrc7tz092a1uu9flirbo63yu26punjhco0qi82&rid=giphy.gif&ct=g')"
         return
     }
@@ -375,8 +378,9 @@ function dealButton () {
         document.getElementById("deal").disabled = true
         document.getElementById("hit").disabled = false
         document.getElementById("stay").disabled = false
-        
+
         canvas.style.backgroundImage = "url('https://media.istockphoto.com/photos/poker-table-picture-id1046326882?k=20&m=1046326882&s=612x612&w=0&h=G7D7aw9iB8p1A9LH26O9e6p8Pt5p82B44MbWPrIZmRo=')"
+        
         let dealerCard1 = newDeck.shift()
         let dealerCard2 = newDeck.shift()
         let playerCard1 = newDeck.shift()
@@ -404,7 +408,7 @@ function dealButton () {
     }
     else if (gameOver == true) {
         let wins = document.getElementById("score")
-        wins.innerText = `Player wins: ${playerWins}\u00A0\u00A0\u00A0\u00A0Dealer wins: ${dealerWins}\u00A0\u00A0\u00A0\u00A0 Pushes: ${pushCount}`
+        wins.innerText = `Player wins: ${playerWins}\u00A0\u00A0\u00A0\u00A0Jigsaw wins: ${dealerWins}\u00A0\u00A0\u00A0\u00A0 Pushes: ${pushCount}`
         playerTurn = true
         hitCounter = 0
         gameOver = false
@@ -469,9 +473,7 @@ function dealerTotal () {
             dealerTotals += dealerCardValues[i]
             aceCount--
         }
-      
-
-        
+       
     }
     return dealerTotals
 }
@@ -491,8 +493,9 @@ function gameStatus () {
         document.getElementById("hit").disabled = true
         document.getElementById("doubleDown").disabled = true
         document.getElementById("deal").disabled = false
-        result.innerText = "Push!"
+        result.innerText = `Both of you have ${playerScore}!  Push!`
         pushCount++
+        return
 
     }
     else if (dealerScore == 21 && dealerCards.length == 2) {
@@ -501,14 +504,13 @@ function gameStatus () {
         let dealerCard2 = dealerCards[1]
         let img2 = document.getElementById(dealerCard2)
         ctx.drawImage(img2, (canvas.width / 2) + 10, 10, 100, 140)
-        result.innerText = "Dealer has blackjack! You lose!"
         document.getElementById("hit").disabled = true
         document.getElementById("doubleDown").disabled = true
         document.getElementById("deal").disabled = false
+        result.innerText = "Jigsaw has blackjack! You lose!"
         moneyTracker = moneyTracker - betAmount
         dealerWins++
-        
-        
+        return
     }
     else if (playerScore == 21 && (playerCards.length == 2)) {
         document.getElementById("stay").disabled = true
@@ -522,6 +524,7 @@ function gameStatus () {
         gameOver = true
         moneyTracker = parseInt(moneyTracker) + parseInt((betAmount * (3 / 2))) 
         playerWins++
+        return
     }
     else if (playerScore > 21) {
         gameOver = true
@@ -531,10 +534,11 @@ function gameStatus () {
         let dealerCard2 = dealerCards[1]
         let img2 = document.getElementById(dealerCard2)
         ctx.drawImage(img2, (canvas.width / 2) + 10, 10, 100, 140)
-        result.innerText = "You busted! Dealer wins!"
+        result.innerText = "You bust! Jigsaw wins!"
         document.getElementById("deal").disabled = false
         moneyTracker = moneyTracker - betAmount
         dealerWins++
+        return
     }
     else if (dealerScore > 21) {
         gameOver = true
@@ -542,9 +546,10 @@ function gameStatus () {
         document.getElementById("hit").disabled = true
         document.getElementById("doubleDown").disabled = true
         document.getElementById("deal").disabled = false
-        result.innerText = "Dealer busted! You win!"
+        result.innerText = `Jigsaw has ${dealerScore}!  Jigsaw busts! You win!`
         moneyTracker = parseInt(moneyTracker) + parseInt(betAmount)
         playerWins++
+        return
     }
     else if (playerTurn == false && dealerScore > playerScore) {
         gameOver = true
@@ -552,9 +557,10 @@ function gameStatus () {
         document.getElementById("hit").disabled = true
         document.getElementById("doubleDown").disabled = true
         document.getElementById("deal").disabled = false
-        result.innerText = "Dealer wins!"
+        result.innerText = `Jigsaw has ${dealerScore}! Jigsaw wins!`
         moneyTracker = moneyTracker - betAmount
         dealerWins++
+        return
     }
     else if (playerTurn == false && dealerScore < playerScore) {
         gameOver = true
@@ -562,9 +568,10 @@ function gameStatus () {
         document.getElementById("hit").disabled = true
         document.getElementById("doubleDown").disabled = true
         document.getElementById("deal").disabled = false
-        result.innerText = "You win!"
+        result.innerText = `Jigsaw has ${dealerScore}!  You win!`
         moneyTracker = parseInt(moneyTracker) + parseInt(betAmount)
         playerWins++
+        return
     } 
 }
 

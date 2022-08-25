@@ -8,11 +8,7 @@ function hitButton (e) {
         newDeck.push(playerCard3)
         let img5= document.getElementById(playerCard3)
         ctx.drawImage(img5, (canvas.width / 2) + 130, canvas.height - 160, 100, 140)
-        // // let hit = document.querySelector("#hit")
-        // document.getElementById("doubleDown").disabled = true
-        // hit.removeEventListener("click", hitButton)
-        // hit.onclick = secondHit    
-        // e.stopImmediatePropagation()
+        document.getElementById("doubleDown").disabled = true
         hitCounter++
         gameStatus()
     }
@@ -22,11 +18,6 @@ function hitButton (e) {
         newDeck.push(playerCard4)
         let img6 = document.getElementById(playerCard4)
         ctx.drawImage(img6,(canvas.width / 2) + 150, canvas.height - 160, 100, 140)
-        // this.removeEventListener("click", secondHit)
-        // let hit = document.querySelector("#hit")
-        // document.getElementById("doubleDown").disabled = true
-        // hit.onclick = thirdHit    
-        // e.stopImmediatePropagation()
         hitCounter++
         gameStatus()
     }
@@ -36,11 +27,6 @@ function hitButton (e) {
         newDeck.push(playerCard5)
         let img7 = document.getElementById(playerCard5)
         ctx.drawImage(img7,(canvas.width / 2) + 170, canvas.height - 160, 100, 140)
-        // this.removeEventListener("click", thirdHit)
-        // let hit = document.querySelector("#hit")
-        // document.getElementById("doubleDown").disabled = true
-        // hit.onclick = fourthHit 
-        // e.stopImmediatePropagation()
         hitCounter++
         gameStatus()
     }
@@ -50,11 +36,6 @@ function hitButton (e) {
         newDeck.push(playerCard6)
         let img8 = document.getElementById(playerCard6)
         ctx.drawImage(img8,(canvas.width / 2) + 190, canvas.height - 160, 100, 140)
-        // this.removeEventListener("click", fourthHit)
-        // let hit = document.querySelector("#hit")
-        // document.getElementById("doubleDown").disabled = true
-        // hit.onclick = fifthHit  
-        // e.stopImmediatePropagation()
         hitCounter++
         gameStatus()
     } 
@@ -64,11 +45,6 @@ function hitButton (e) {
         newDeck.push(playerCard7)
         let img9 = document.getElementById(playerCard7)
         ctx.drawImage(img9,(canvas.width / 2) + 210, canvas.height - 160, 100, 140)
-        // this.removeEventListener("click", fifthHit)
-        // let hit = document.querySelector("#hit")
-        // document.getElementById("doubleDown").disabled = true
-        // hit.onclick = sixthHit    
-        // e.stopImmediatePropagation()
         hitCounter++
         gameStatus()
     }
@@ -78,11 +54,6 @@ function hitButton (e) {
         newDeck.push(playerCard8)
         let img10 = document.getElementById(playerCard8)
         ctx.drawImage(img10,(canvas.width / 2) + 230, canvas.height - 160, 100, 140)
-        // this.removeEventListener("click", sixthHit)
-        // let hit = document.querySelector("#hit")
-        // document.getElementById("doubleDown").disabled = true
-        // hit.onclick = seventhHit   
-        // e.stopImmediatePropagation()
         hitCounter++
         gameStatus()
     }
@@ -92,11 +63,6 @@ function hitButton (e) {
         newDeck.push(playerCard9)
         let img11 = document.getElementById(playerCard9)
         ctx.drawImage(img11,(canvas.width / 2) + 250, canvas.height - 160, 100, 140)
-        // this.removeEventListener("click", seventhHit)
-        // let hit = document.querySelector("#hit")
-        // document.getElementById("doubleDown").disabled = true
-        // hit.onclick = eighthHit    
-        // e.stopImmediatePropagation()
         hitCounter++
         gameStatus()
     }
@@ -106,11 +72,6 @@ function hitButton (e) {
         newDeck.push(playerCard10)
         let img12 = document.getElementById(playerCard10)
         ctx.drawImage(img12,(canvas.width / 2) + 270, canvas.height - 160, 100, 140)
-        // this.removeEventListener("click", eighthHit)
-        // let hit = document.querySelector("#hit")
-        // document.getElementById("doubleDown").disabled = true
-        // hit.onclick = ninthHit   
-        // e.stopImmediatePropagation()
         hitCounter++
         gameStatus()
     } 
@@ -120,10 +81,8 @@ function hitButton (e) {
         newDeck.push(playerCard11)
         let img13 = document.getElementById(playerCard11)
         ctx.drawImage(img13,(canvas.width / 2) + 290, canvas.height - 160, 100, 140)
-        // this.removeEventListener("click", ninthHit)
         document.getElementById("hit").disabled = true
         document.getElementById("doubleDown").disabled = true
-        // e.stopImmediatePropagation()
         hitCounter++
         gameStatus()
     }
