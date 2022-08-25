@@ -10,6 +10,7 @@ window.onload = function (e) {
     ctx.fillStyle = "rgb(156, 22, 22)"
     ctx.fillText("Do you wanna play a game?", (canvas.width / 2) - 250, canvas.height / 2 - 100)
     ctx.fillText("Please hit the deal button to start.", (canvas.width / 2) - 350, canvas.height / 2 - 50)
+    
     let jigsaw = document.querySelector("#jigsaw")
     ctx.drawImage(jigsaw, canvas.width / 2 - 100, canvas.height / 2 , 200, 150)
     
