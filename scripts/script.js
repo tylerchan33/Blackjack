@@ -13,6 +13,9 @@ window.onload = function (e) {
     ctx.drawImage(jigsaw, canvas.width / 2 - 100, canvas.height / 2 , 200, 100)
     
     document.getElementById("newGame").disabled = true
+    let playerScore = document.getElementById("playerTotal")
+    playerScore.innerText = `Good luck! Bet = $10`
+
     
 }   
 
@@ -295,6 +298,7 @@ let hitCounter = 0
 let dealerWins = 0
 let playerWins = 0
 let pushCount = 0
+let moneyTracker = 1000
 
 // const gameStatus = document.getElementById("result")
    
@@ -451,9 +455,10 @@ function gameStatus () {
         let dealerCard2 = dealerCards[1]
         let img2 = document.getElementById(dealerCard2)
         ctx.drawImage(img2, (canvas.width / 2) + 10, 10, 100, 140)
-        result.innerText = "Dealer has blackjack!"
+        result.innerText = "Dealer has blackjack! You lose!"
         document.getElementById("hit").disabled = true
         document.getElementById("newGame").disabled = false
+        moneyTracer -= 10
         dealerWins++
         
         
@@ -467,6 +472,7 @@ function gameStatus () {
         result.innerText = "You have blackjack! You win!"
         document.getElementById("hit").disabled = true
         gameOver = true
+        moneyTracker += 15
         playerWins++
     }
     else if (playerScore > 21) {
@@ -478,6 +484,7 @@ function gameStatus () {
         let img2 = document.getElementById(dealerCard2)
         ctx.drawImage(img2, (canvas.width / 2) + 10, 10, 100, 140)
         result.innerText = "You busted! Dealer wins!"
+        moneyTracer -= 10
         dealerWins++
     }
     else if (dealerScore > 21) {
@@ -486,6 +493,7 @@ function gameStatus () {
         document.getElementById("hit").disabled = true
         document.getElementById("newGame").disabled = false
         result.innerText = "Dealer busted! You win!"
+        moneyTracker += 10
         playerWins++
     }
     else if (playerTurn == false && dealerScore > playerScore) {
@@ -494,6 +502,7 @@ function gameStatus () {
         document.getElementById("hit").disabled = true
         document.getElementById("newGame").disabled = false
         result.innerText = "Dealer wins!"
+        moneyTracer -= 10
         dealerWins++
     }
     else if (playerTurn == false && dealerScore < playerScore) {
@@ -502,6 +511,7 @@ function gameStatus () {
         document.getElementById("hit").disabled = true
         document.getElementById("newGame").disabled = false
         result.innerText = "You win!"
+        moneyTracker += 10
         playerWins++
     } 
     
@@ -897,6 +907,8 @@ newGameBtn.addEventListener("click", function newGame () {
     if (gameOver == true) {
         let wins = document.getElementById("score")
         wins.innerText = `Player wins: ${playerWins}\u00A0\u00A0\u00A0\u00A0Dealer wins: ${dealerWins}\u00A0\u00A0\u00A0\u00A0 Pushes: ${pushCount}`
+        let money = document.getElementById("money")
+        money.innerText = `Money: $${moneyTracker}`
         playerTurn = true
         hitCounter = 0
         gameOver = false
