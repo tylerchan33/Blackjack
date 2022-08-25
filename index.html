@@ -22,13 +22,14 @@
     <!-- </container> -->
     <main>
         <!-- <div class=""> -->
+        
         <canvas id="canvas">
 
         </canvas>
         
         <!-- </div> -->
         <img src="./media/jigsaw.jpg" alt = "jigsaw" id="jigsaw"/>
-        <img src="./media/dealerHidden.png" alt = "dealer card facedown" id="dealerHidden" />
+        <img src="./media/jigsawCard.png" alt = "dealer card facedown" id="dealerHidden" />
         <img src="./media/2_of_clubs.png" alt = "2 of clubs" class="cards" id="twoOfClubs"/>
         <img src="./media/2_of_diamonds.png" alt = "2 of diamonds" class="cards" id="twoOfDiamonds"/>
         <img src="./media/2_of_hearts.png" alt = "2 of hearts" class="cards" id="twoOfHearts"/>
@@ -82,10 +83,12 @@
         <img src="./media/ace_of_hearts.png" alt = "ace of clubs" class="cards" id="aceOfHearts"/>
         <img src="./media/ace_of_spades.png" alt = "ace of spades" class="cards" id="aceOfSpades"/>
     </main>
-    <footer>
-        <div class="score">
-            <p id="playerScore"></p>
-        </div>
+   
+    <div class="scoreboard">
+        <p id="score"></p>
+        <p id="playerTotal"></p>
+    </div>
+        <footer>
         <div class="buttons">
             <button id="newGame">NEW GAME</button>
             <button id="deal">DEAL</button>

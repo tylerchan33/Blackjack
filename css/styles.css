@@ -24,10 +24,13 @@ h1 {
 canvas {
     background-image: url("https://media.istockphoto.com/photos/poker-table-picture-id1046326882?k=20&m=1046326882&s=612x612&w=0&h=G7D7aw9iB8p1A9LH26O9e6p8Pt5p82B44MbWPrIZmRo=");
     background-size: cover;
-    background-position: 0% 60%;
-    border: 1px solid black;
+    background-position: 0% 60%; 
     width: 70vw;
     height: 60vh;  
+    border: 10px solid transparent;
+    border-image-repeat: round;
+    border-image-slice: 10;
+    border-image-source: url("https://img.freepik.com/free-photo/wooden-textured-background_53876-14865.jpg?t=st=1661384010~exp=1661384610~hmac=11f53a30d9c86b7e2e06b230413bf4fa72b4f3460f4f82b33757e37e9de089b5");
 }
 
 .boxes {
@@ -59,11 +62,17 @@ button {
 }
 
 #hit {
-    background-color: blue;    
+    background-color: black;
+    color: white;   
 }
 #deal {
     background-color: green;
+    color: white;
     
+}
+#stay {
+    background-color: rgb(196, 6, 6);
+    color: white;
 }
 #result {
     text-align: center;
@@ -72,7 +81,7 @@ button {
                 1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
 }
 
-#playerScore {
+#playerTotal {
     text-align: center;
     color: red;
     text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
@@ -85,11 +94,37 @@ button {
 }
 #newGame {
     border-radius: 90%;
-    width: 200px;
+    width: 150px;
     margin-top: 0px;
+    
+    background-size: cover;
     
 }
 
 #dealerHidden {
     display: none;
+}
+
+
+#newGame:hover:enabled {
+    border-color: rgba(255, 255, 255, 1);
+  }
+  #hit:hover:enabled {
+    border-color: rgba(255, 255, 255, 1);
+    
+  }
+  #stay:hover:enabled {
+    border-color: rgba(255, 255, 255, 1);
+  }
+  #deal:hover:enabled {
+    border-color: rgba(255, 255, 255, 1);
+  }
+.scoreboard {
+    display: flexbox;
+    background-color: rgb(200, 77, 77);
+    border-radius: 20%;
+    width: 500px;
+    margin: auto;
+    justify-content: center;
+    text-align: center;
 }
