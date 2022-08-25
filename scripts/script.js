@@ -7,10 +7,10 @@ window.onload = function (e) {
     document.getElementById("stay").disabled = true
 
     ctx.font = "50px Arial"
-    ctx.fillText("Do you wanna play a game?", (canvas.width / 2) - 300, 200)
-    ctx.fillText("Please hit the deal button to start.", (canvas.width / 2) - 350, 280)
+    ctx.fillText("Do you wanna play a game?", (canvas.width / 2) - 300, canvas.height / 2 - 100)
+    ctx.fillText("Please hit the deal button to start.", (canvas.width / 2) - 350, canvas.height / 2 - 50)
     let jigsaw = document.querySelector("#jigsaw")
-    ctx.drawImage(jigsaw, canvas.width / 2 - 100, 300, 200, 100)
+    ctx.drawImage(jigsaw, canvas.width / 2 - 100, canvas.height / 2 , 200, 100)
     
     document.getElementById("newGame").disabled = true
     
@@ -896,7 +896,7 @@ newGameBtn.addEventListener("click", function newGame () {
     // let rebornDeck = newDeck.concat(playerCards, dealerCards)
     if (gameOver == true) {
         let wins = document.getElementById("score")
-        wins.innerText = `Player wins: ${playerWins}.\u00A0\u00A0\u00A0\u00A0Dealer wins: ${dealerWins}.\u00A0\u00A0\u00A0\u00A0 Pushes: ${pushCount}`
+        wins.innerText = `Player wins: ${playerWins}\u00A0\u00A0\u00A0\u00A0Dealer wins: ${dealerWins}\u00A0\u00A0\u00A0\u00A0 Pushes: ${pushCount}`
         playerTurn = true
         hitCounter = 0
         gameOver = false

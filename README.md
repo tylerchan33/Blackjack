@@ -9,7 +9,7 @@ https://bicyclecards.com/how-to-play/blackjack/
 
 ## Tech Stack
 
-- Canvas or DOM
+- Canvas and DOM
 - CSS
 - Javascript
 - HTML
@@ -20,7 +20,7 @@ https://bicyclecards.com/how-to-play/blackjack/
 
 Be able to play a hand against the dealer
 
-Bet button and Pair Plus button
+Bet button and Double Down button
 
 Random cards
 
