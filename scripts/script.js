@@ -6,11 +6,11 @@ window.onload = function (e) {
     document.getElementById("hit").disabled = true
     document.getElementById("stay").disabled = true
 
-    ctx.font = "50px Arial"
-    ctx.fillText("Do you wanna play a game?", (canvas.width / 2) - 300, canvas.height / 2 - 100)
+    ctx.font = "50px Creepster"
+    ctx.fillText("Do you wanna play a game?", (canvas.width / 2) - 250, canvas.height / 2 - 100)
     ctx.fillText("Please hit the deal button to start.", (canvas.width / 2) - 350, canvas.height / 2 - 50)
     let jigsaw = document.querySelector("#jigsaw")
-    ctx.drawImage(jigsaw, canvas.width / 2 - 100, canvas.height / 2 , 200, 100)
+    ctx.drawImage(jigsaw, canvas.width / 2 - 100, canvas.height / 2 , 200, 150)
     
    
     document.getElementById("doubleDown").disabled = true
@@ -352,6 +352,8 @@ function dealButton () {
     if (betInput.value > moneyTracker || betInput.value < 1) {
         let playerScore = document.getElementById("playerTotal")
             playerScore.innerText = `You have $${moneyTracker}. Please place a bet between $1 and $${moneyTracker}`
+            canvas.style.backgroundImage = "url('https://c.tenor.com/FF9eF7bkSc4AAAAC/im-here-jigsaw.gif')"
+            canvas.style.backgroundPosition = "0% 0%"
             return
     }
     else if (gameOver == false) {
@@ -360,7 +362,7 @@ function dealButton () {
         document.getElementById("hit").disabled = false
         document.getElementById("stay").disabled = false
         document.getElementById("doubleDown").disabled = false
-   
+        canvas.style.backgroundImage = "url('https://media.istockphoto.com/photos/poker-table-picture-id1046326882?k=20&m=1046326882&s=612x612&w=0&h=G7D7aw9iB8p1A9LH26O9e6p8Pt5p82B44MbWPrIZmRo=')"
         let dealerCard1 = newDeck.shift()
         let dealerCard2 = newDeck.shift()
         let playerCard1 = newDeck.shift()
@@ -392,8 +394,6 @@ function dealButton () {
     else if (gameOver == true) {
         let wins = document.getElementById("score")
         wins.innerText = `Player wins: ${playerWins}\u00A0\u00A0\u00A0\u00A0Dealer wins: ${dealerWins}\u00A0\u00A0\u00A0\u00A0 Pushes: ${pushCount}`
-        let money = document.getElementById("money")
-        money.innerText = `Money: $${moneyTracker}`
         playerTurn = true
         hitCounter = 0
         gameOver = false
@@ -435,7 +435,8 @@ function playerTotal () {
         }  
     }
     let playerScore = document.getElementById("playerTotal")
-    playerScore.innerText = `You have: ${playerTotals}.`
+    playerScore.innerText = `You have: ${playerTotals}.
+     Bank: $${moneyTracker}`
     return playerTotals 
 }
 playerTotal ()

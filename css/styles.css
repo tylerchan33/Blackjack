@@ -1,12 +1,19 @@
+
 body {
     background-image: url("https://media0.giphy.com/media/3ov9jUCYetT3GVwcy4/giphy.gif?cid=ecf05e479fyhirrrjjko1n8x5wutk3pz1gy6753o73s01ve5&rid=giphy.gif&ct=g");
     background-size: cover;
+    
 }
 #nameOfGame {
     margin-top: 0px;
     text-align: center;
     font-size: 50px;
-    color: rgb(196, 6, 6)
+    color: rgb(196, 6, 6);
+    font-family: "Creepster"
+    
+    
+
+    
 }
 main {
     display: flex;
@@ -132,7 +139,7 @@ button {
     display: flexbox;
     color: white;   
     background-color: maroon;
-    border-radius: 20%;
+    border-radius: 30%;
     border: 2px solid rgb(230, 230, 19);
     box-shadow: 0px 0px 10px 10px rgb(211, 211, 142);
     width: 500px;
