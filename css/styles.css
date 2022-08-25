@@ -135,6 +135,7 @@ button {
   #doubleDown:hover:enabled {
     border-color: rgba(255, 255, 255, 1);
   }
+  
 .scoreboard {
     display: flexbox;
     color: white;   
