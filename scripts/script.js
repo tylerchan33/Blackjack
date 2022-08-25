@@ -348,9 +348,14 @@ function dealButton () {
     const ctx = canvas.getContext("2d")
     canvas.setAttribute("height", getComputedStyle(canvas)["height"])
     canvas.setAttribute("width", getComputedStyle(canvas)["width"])
-    
-  
-    if (gameOver == false) {
+    let betInput = document.getElementById("amount")
+    if (betInput.value > moneyTracker || betInput.value < 1) {
+        let playerScore = document.getElementById("playerTotal")
+            playerScore.innerText = `You have $${moneyTracker}. Please place a bet between $1 and $${moneyTracker}`
+            return
+    }
+    else if (gameOver == false) {
+        betAmount = betInput.value
         document.getElementById("deal").disabled = true
         document.getElementById("hit").disabled = false
         document.getElementById("stay").disabled = false
@@ -502,7 +507,7 @@ function gameStatus () {
         document.getElementById("hit").disabled = true
         document.getElementById("deal").disabled = false
         gameOver = true
-        moneyTracker = moneyTracker + (betAmount * (3 / 2)) 
+        moneyTracker = parseInt(moneyTracker) + parseInt((betAmount * (3 / 2))) 
         playerWins++
     }
     else if (playerScore > 21) {
@@ -525,7 +530,7 @@ function gameStatus () {
         document.getElementById("doubleDown").disabled = true
         document.getElementById("deal").disabled = false
         result.innerText = "Dealer busted! You win!"
-        moneyTracker = moneyTracker + betAmount
+        moneyTracker = parseInt(moneyTracker) + parseInt(betAmount)
         playerWins++
     }
     else if (playerTurn == false && dealerScore > playerScore) {
@@ -545,7 +550,7 @@ function gameStatus () {
         document.getElementById("doubleDown").disabled = true
         document.getElementById("deal").disabled = false
         result.innerText = "You win!"
-        moneyTracker = moneyTracker + betAmount
+        moneyTracker = parseInt(moneyTracker) + parseInt(betAmount)
         playerWins++
     } 
     
@@ -963,27 +968,27 @@ doubleDown.addEventListener("click", function doubleDown () {
 
 
 
-let betInput = document.getElementById("amount")
-let bet = document.getElementById("bet")
-function betButton () {
-    let betInput = document.getElementById("amount")
-    if (betInput.value >= moneyTracker || betInput.value < 1) {
-        let playerScore = document.getElementById("playerTotal")
-            playerScore.innerText = `You have $${moneyTracker}. Please place a bet between $1 and $${moneyTracker}`
+// let betInput = document.getElementById("amount")
+// let bet = document.getElementById("bet")
+// function betButton () {
+//     let betInput = document.getElementById("amount")
+//     if (betInput.value >= moneyTracker || betInput.value < 1) {
+//         let playerScore = document.getElementById("playerTotal")
+//             playerScore.innerText = `You have $${moneyTracker}. Please place a bet between $1 and $${moneyTracker}`
             
-            return
-    }
-    else {
-            deal.addEventListener("click", e => {
-            betAmount = betInput.value
-            console.log("bet clicked")
+//             return
+//     }
+//     else {
+//             deal.addEventListener("click", e => {
+//             betAmount = betInput.value
+//             console.log("bet clicked")
        
-        })
-    }
-}
+//         })
+//     }
+// }
     
 
-betButton ()
+// betButton ()
 
 
 
