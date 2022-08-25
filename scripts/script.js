@@ -13,6 +13,8 @@ window.onload = function (e) {
     ctx.drawImage(jigsaw, canvas.width / 2 - 100, canvas.height / 2 , 200, 100)
     
     document.getElementById("newGame").disabled = true
+    document.getElementById("doubleDown").disabled = true
+    
     let playerScore = document.getElementById("playerTotal")
     playerScore.innerText = `Good luck! Bet = $10`
 
@@ -350,6 +352,7 @@ function dealButton () {
         document.getElementById("deal").disabled = true
         document.getElementById("hit").disabled = false
         document.getElementById("stay").disabled = false
+        document.getElementById("doubleDown").disabled = false
     }
   
     gameInProgress = true   
@@ -381,6 +384,7 @@ function dealButton () {
     ctx.drawImage(img3, (canvas.width / 2) -100, canvas.height - 160, 100, 140)
     ctx.drawImage(img4, (canvas.width / 2) + 10, canvas.height - 160, 100, 140)
     gameStatus()
+    
 }
 
 const deal = document.querySelector("#deal")
@@ -930,7 +934,26 @@ newGameBtn.addEventListener("click", function newGame () {
     }
 })
 
+const doubleDown = document.getElementById("doubleDown")
+doubleDown.addEventListener("click", function doubleDown () {
+    const canvas = document.getElementById("canvas")
+    const ctx = canvas.getContext("2d")
+    let playerScore = playerTotal ()
+    if (playerScore <= 21 && hitCounter === 0) {
+        let playerCard3 = newDeck.shift()
+        playerCards.push(playerCard3)
+        newDeck.push(playerCard3)
+        let img5= document.getElementById(playerCard3)
+        ctx.drawImage(img5, (canvas.width / 2) + 130, canvas.height - 160, 100, 140)
+        playerTurn = false
+        document.getElementById("hit").disabled = true
+        document.getElementById("stay").disabled = true
+        document.getElementById("doubleDown").disabled = true
+        dealerTurn1()
+        gameStatus()
+    }
 
+})
 
 
 
