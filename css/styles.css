@@ -74,7 +74,13 @@ button {
     background-color: rgb(196, 6, 6);
     color: white;
 }
+#doubleDown {
+    background-color: blue;
+    color: white;
+}
 #result {
+    margin-top: 5px;
+    margin-bottom: 5px;
     text-align: center;
     color: red;
     text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
@@ -119,6 +125,9 @@ button {
   #deal:hover:enabled {
     border-color: rgba(255, 255, 255, 1);
   }
+  #doubleDown:hover:enabled {
+    border-color: rgba(255, 255, 255, 1);
+  }
 .scoreboard {
     display: flexbox;
     color: white;   
@@ -134,3 +143,9 @@ button {
     text-align: center;
 }
 
+input {
+    width: 60%;
+}
+#bet {
+    border-radius: 0;
+}
