@@ -118,9 +118,9 @@ button {
 
 #reset {
     border-radius: 50%;
-    width: 200px;
-    background-color:rgb(0, 0, 0);
-    color: white;
+    background-image: url("https://ihfiles.com/products/21/1441/p/4/979900.jpeg");
+    background-size: cover;
+    color: black;
 }
 
 #bet {
@@ -156,10 +156,6 @@ input {
     background-size: cover;
     color: white;
 }
-
-#newGame:hover:enabled {
-    border-color: rgba(255, 255, 255, 1);
-  }
 
 #hit:hover:enabled {
     border-color: rgba(255, 255, 255, 1);
