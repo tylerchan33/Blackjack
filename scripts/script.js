@@ -3,6 +3,7 @@ window.onload = function (e) {
     const ctx = canvas.getContext("2d")
     canvas.setAttribute("height", getComputedStyle(canvas)["height"])
     canvas.setAttribute("width", getComputedStyle(canvas)["width"])
+    document.getElementById("deal").disabled = false
     document.getElementById("hit").disabled = true
     document.getElementById("stay").disabled = true
     document.getElementById("doubleDown").disabled = true
@@ -21,9 +22,9 @@ window.onload = function (e) {
     ctx.font = "28px Creepster"
     ctx.strokeStyle = "black"
     ctx.fillText("- The rules are the same as regular Blackjack, except Jigsaw doesn't believe in insurance or splitting ", 4, 50)
-    ctx.fillText("  pairs. The goal of Jigsaw Blackjack is to for your hand value be worth more than Jigsaw's without", 4, 75)
-    ctx.fillText("  going over 21. Jigsaw hits on soft 17 and Blackjack pays 3 : 2.", 4, 100)
-    ctx.fillText("- Place your bet amount and then click on the deal button to start the fun.  Go through any of", 4, 125)
+    ctx.fillText("  pairs. The goal of Jigsaw Blackjack is for your hand value to be worth more than Jigsaw's hand value", 4, 75)
+    ctx.fillText("   without going over 21. Jigsaw hits on soft 17 and Blackjack pays 3 : 2.", 4, 100)
+    ctx.fillText("- Enter your bet amount and then click on the deal button to start the fun.  Go through any of", 4, 125)
     ctx.fillText("   your possible button actions (see below for more information) and beat Jigsaw!  Keep your", 4, 150)
     ctx.fillText("   same bet or change it up, then press the deal button to play again!", 4, 175)
     ctx.font = "30px Creepster"
@@ -41,9 +42,9 @@ window.onload = function (e) {
     ctx.fillText("   It is then turned over to Jigsaw.  You can potentially win double your bet or lose double your bet.", 4, 355)
     ctx.strokeStyle = "black"
     ctx.strokeText("- The rules are the same as regular Blackjack, except Jigsaw doesn't believe in insurance or splitting ", 4, 50)
-    ctx.strokeText("  pairs. The goal of Jigsaw Blackjack is to for your hand value be worth more than Jigsaw's without", 4, 75)
-    ctx.strokeText("  going over 21. Jigsaw hits on soft 17 and Blackjack pays 3 : 2.", 4, 100)
-    ctx.strokeText("- Place your bet amount and then click on the deal button to start the fun.  Go through any of", 4, 125)
+    ctx.strokeText("  pairs. The goal of Jigsaw Blackjack is for your hand value to be worth more than Jigsaw's hand value", 4, 75)
+    ctx.strokeText("   without going over 21. Jigsaw hits on soft 17 and Blackjack pays 3 : 2.", 4, 100)
+    ctx.strokeText("- Enter your bet amount and then click on the deal button to start the fun.  Go through any of", 4, 125)
     ctx.strokeText("   your possible button actions (see below for more information) and beat Jigsaw!  Keep your", 4, 150)
     ctx.strokeText("   same bet or change it up, then press the deal button to play again!", 4, 175)
     ctx.strokeText("- New session: Broke?  Jigsaw dominating you? Press this button to start a session from scratch.", 4, 230)
@@ -53,7 +54,6 @@ window.onload = function (e) {
     ctx.strokeText("- Double Down: You place a bet equal to the amount of your original bet and receive only one card.", 4, 330)
     ctx.strokeText("   It is then turned over to Jigsaw.  You can potentially win double your bet or lose double your bet.", 4, 355)
  
-
     ctx.font = "30px Creepster"
     ctx.fillStyle = "black"
     ctx.fillText("Do you wanna play a game?  Please set your bet amount ", 20 , canvas.height  - 30)
@@ -61,10 +61,6 @@ window.onload = function (e) {
     
     let jigsaw = document.querySelector("#jigsaw")
     ctx.drawImage(jigsaw, canvas.width/ 2 + 100, canvas.height - 60, 110, 80)
-   
-   
-
-    
 }   
 
 const cards = {
@@ -666,14 +662,20 @@ reset.addEventListener("click", function restart () {
     const ctx = canvas.getContext("2d")
     canvas.setAttribute("height", getComputedStyle(canvas)["height"])
     canvas.setAttribute("width", getComputedStyle(canvas)["width"])
-    const result = document.querySelector("#result")
+    document.getElementById("deal").disabled = false
     document.getElementById("hit").disabled = true
     document.getElementById("stay").disabled = true
-    document.getElementById("deal").disabled = false
     document.getElementById("doubleDown").disabled = true
+    let wins = document.getElementById("score")
+    wins.innerText = " "
+    let playerScore = document.getElementById("playerTotal")
+    playerScore.innerText = `Good luck! You start with $1000!`
+    let dealerScore = document.getElementById("result")
+    dealerScore.innerText = " "
+    let moneyTotal = document.getElementById("money")
+    moneyTotal.innerText = " "
 
     canvas.style.backgroundImage = "url('https://media.istockphoto.com/photos/poker-table-picture-id1046326882?k=20&m=1046326882&s=612x612&w=0&h=G7D7aw9iB8p1A9LH26O9e6p8Pt5p82B44MbWPrIZmRo=')"
-
     
     gameInProgress = false
     playerTurn = true
@@ -695,9 +697,9 @@ reset.addEventListener("click", function restart () {
     ctx.font = "28px Creepster"
     ctx.strokeStyle = "black"
     ctx.fillText("- The rules are the same as regular Blackjack, except Jigsaw doesn't believe in insurance or splitting ", 4, 50)
-    ctx.fillText("  pairs. The goal of Jigsaw Blackjack is to for your hand value be worth more than Jigsaw's without", 4, 75)
-    ctx.fillText("  going over 21. Jigsaw hits on soft 17 and Blackjack pays 3 : 2.", 4, 100)
-    ctx.fillText("- Place your bet amount and then click on the deal button to start the fun.  Go through any of", 4, 125)
+    ctx.fillText("  pairs. The goal of Jigsaw Blackjack is for your hand value to be worth more than Jigsaw's hand value", 4, 75)
+    ctx.fillText("   without going over 21. Jigsaw hits on soft 17 and Blackjack pays 3 : 2.", 4, 100)
+    ctx.fillText("- Enter your bet amount and then click on the deal button to start the fun.  Go through any of", 4, 125)
     ctx.fillText("   your possible button actions (see below for more information) and beat Jigsaw!  Keep your", 4, 150)
     ctx.fillText("   same bet or change it up, then press the deal button to play again!", 4, 175)
     ctx.font = "30px Creepster"
@@ -715,9 +717,9 @@ reset.addEventListener("click", function restart () {
     ctx.fillText("   It is then turned over to Jigsaw.  You can potentially win double your bet or lose double your bet.", 4, 355)
     ctx.strokeStyle = "black"
     ctx.strokeText("- The rules are the same as regular Blackjack, except Jigsaw doesn't believe in insurance or splitting ", 4, 50)
-    ctx.strokeText("  pairs. The goal of Jigsaw Blackjack is to for your hand value be worth more than Jigsaw's without", 4, 75)
-    ctx.strokeText("  going over 21. Jigsaw hits on soft 17 and Blackjack pays 3 : 2.", 4, 100)
-    ctx.strokeText("- Place your bet amount and then click on the deal button to start the fun.  Go through any of", 4, 125)
+    ctx.strokeText("  pairs. The goal of Jigsaw Blackjack is for your hand value to be worth more than Jigsaw's hand value", 4, 75)
+    ctx.strokeText("   without going over 21. Jigsaw hits on soft 17 and Blackjack pays 3 : 2.", 4, 100)
+    ctx.strokeText("- Enter your bet amount and then click on the deal button to start the fun.  Go through any of", 4, 125)
     ctx.strokeText("   your possible button actions (see below for more information) and beat Jigsaw!  Keep your", 4, 150)
     ctx.strokeText("   same bet or change it up, then press the deal button to play again!", 4, 175)
     ctx.strokeText("- New session: Broke?  Jigsaw dominating you? Press this button to start a session from scratch.", 4, 230)
@@ -734,15 +736,7 @@ reset.addEventListener("click", function restart () {
     
     let jigsaw = document.querySelector("#jigsaw")
     ctx.drawImage(jigsaw, canvas.width/ 2 + 100, canvas.height - 60, 110, 80)
-    
-    let playerScore = document.getElementById("playerTotal")
-    playerScore.innerText = `Good luck! You start with $1000!`
-    let dealerScore = document.getElementById("result")
-    dealerScore.innerText = " "
-    let wins = document.getElementById("score")
-    wins.innerText = `Your wins: ${playerWins}\u00A0\u00A0\u00A0\u00A0Jigsaw wins: ${dealerWins}\u00A0\u00A0\u00A0\u00A0 Pushes: ${pushCount}`
 })
-
 
 
 
