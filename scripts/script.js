@@ -7,7 +7,7 @@ window.onload = function (e) {
     document.getElementById("stay").disabled = true
 
     ctx.font = "30px Creepster"
-    ctx.fillStyle = "rgb(156, 22, 22)"
+    ctx.fillStyle = "rgb(223, 12, 12)"
     ctx.fillText("How To Play:", (canvas.width /2) - 80, 25)
     ctx.strokeStyle = "black"
     ctx.strokeText("How To Play:", (canvas.width /2) - 80, 25)
@@ -691,7 +691,7 @@ reset.addEventListener("click", function restart () {
     moneyTracker = 1000
     betAmount = 0
     ctx.font = "30px Creepster"
-    ctx.fillStyle = "rgb(156, 22, 22)"
+    ctx.fillStyle = "rgb(223, 12, 12)"
     ctx.fillText("How To Play:", (canvas.width /2) - 80, 25)
     ctx.strokeStyle = "black"
     ctx.strokeText("How To Play:", (canvas.width /2) - 80, 25)
