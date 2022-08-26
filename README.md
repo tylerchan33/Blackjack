@@ -13,6 +13,12 @@ Rules:
     The numerical cards are worth the number on their card.  Face cards are worth 10 and Aces are worth 1 or 11.
     Place your bet then you and Jigsaw are dealt two cards, where one of Jigsaw's cards is facedown.  After your hand is dealt, you have the option to hit, stay, or double down (see more information below).  After finishing your actions, it is Jigsaw's turn.  Jigsaw must continue drawing cards until his hand value is 17 or more, unless he has a soft 17.  A soft 17 is when Jigsaw's hand value is 17, Jigsaw has an ace in his hand, and is able to hit without going over 21.  If both your hand and Jigsaw's hand values are 21 or less, then whoever has the higher hand value wins.  Beware: If your hand value exceeds 21, you lose.  If Jigsaw's hand exceeds 21, then you win.  Blackjack is when a player has an Ace and a face card in their first two dealt cards.  If you have blackjack, then you win automatically.  If Jigsaw has blackjack, then you lose automatically.  If you and Jigsaw both have blackjack, then you push.  Blackjack pays 3:2.
 
+    Buttons:
+
+    New Game: Starts new session from scratch.
+
+    Deal: Press this button to start a new hand.
+
     Hit: You will receive another card and as long as your hand value is 21 or less, you may continue to hit
 
     Stay: You are content with your hand and would like to turn it over to Jigsaw.

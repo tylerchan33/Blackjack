@@ -133,12 +133,16 @@ button {
     background-image: url("https://ihfiles.com/products/21/1441/p/4/979900.jpeg");
     background-size: cover;
     color: black;
+    text-shadow: 1px 0 white, -1px 0 white, 0 1px white, 0 -1px white,
+    1px 1px white, -1px -1px white, 1px -1px white, -1px 1px white;
     font-family: "Georgia";
 }
 
 #bet {
     border-radius: 0;
     color: white;
+    text-shadow: 1px 0 black, -1px 0 black, 0 1px black, 0 -1px black,
+                1px 1px black, -1px -1px black, 1px -1px black, -1px 1px black;
     font-family: "Georgia";
     background-image: url("https://media1.giphy.com/media/12Eo7WogCAoj84/giphy.gif?cid=790b7611ca8deb55d51b9ab4a4849eda6a25561d4eea78ae&rid=giphy.gif&ct=g");
 }
@@ -152,6 +156,8 @@ input {
     background-image: url("https://ihfiles.com/products/21/1441/p/4/979870.jpeg");
     background-size: cover;
     color: white;
+    text-shadow: 1px 0 black, -1px 0 black, 0 1px black, 0 -1px black,
+                1px 1px black, -1px -1px black, 1px -1px black, -1px 1px black;
     font-family: "Georgia";
 }
 
@@ -159,6 +165,8 @@ input {
     background-image: url("https://ihfiles.com/products/21/1441/p/4/979905.jpeg");
     background-size: cover;
     color: white;   
+    text-shadow: 1px 0 black, -1px 0 black, 0 1px black, 0 -1px black,
+                1px 1px black, -1px -1px black, 1px -1px black, -1px 1px black;
     font-family: "Georgia";
 }
 
@@ -166,6 +174,8 @@ input {
     background-image: url("https://ihfiles.com/products/21/1441/p/4/979895.jpeg");
     background-size: cover;
     color: white;
+    text-shadow: 1px 0 black, -1px 0 black, 0 1px black, 0 -1px black,
+                1px 1px black, -1px -1px black, 1px -1px black, -1px 1px black;
     font-family: "Georgia";
 }
 
@@ -173,6 +183,8 @@ input {
     background-image: url("https://ihfiles.com/products/21/1441/p/4/979860.jpeg");
     background-size: cover;
     color: white;
+    text-shadow: 1px 0 black, -1px 0 black, 0 1px black, 0 -1px black,
+                1px 1px black, -1px -1px black, 1px -1px black, -1px 1px black;
     font-family: "Georgia";
 }
 
