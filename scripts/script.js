@@ -342,6 +342,8 @@ let playerWins = 0
 let pushCount = 0
 let moneyTracker = 1000
 let betAmount = 0
+let dealerAces = 0
+
 
    
 function deck () {
@@ -375,6 +377,8 @@ function shuffleDeck(array) {
         [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]]
     }
     return array
+    
+    
 }
 
 shuffleDeck(fullDeck)
@@ -504,15 +508,12 @@ function dealerTotal () {
             aceCount++
         }
         if (aceCount > 0 && dealerTotals > 21) {
-            cards.aceOfClubs.value = 1
-            cards.aceOfDiamonds.value = 1
-            cards.aceOfHearts.value = 1
-            cards.aceOfSpades.value = 1 
-            dealerTotals += dealerCardValues[i]
+            dealerTotals = dealerTotals - 10
             aceCount--
         }
        
     }
+    dealerAces = aceCount
     return dealerTotals
 }
 dealerTotal ()
@@ -606,7 +607,7 @@ function gameStatus () {
         document.getElementById("hit").disabled = true
         document.getElementById("doubleDown").disabled = true
         document.getElementById("deal").disabled = false
-        result.innerText = `Jigsaw has ${dealerScore}!  You win!`
+        result.innerText = `Jigsaw has ${dealerScore}.  You win!`
         moneyTracker = parseInt(moneyTracker) + parseInt(betAmount)
         playerWins++
         return
@@ -662,6 +663,7 @@ reset.addEventListener("click", function restart () {
     canvas.setAttribute("width", getComputedStyle(canvas)["width"])
     document.getElementById("hit").disabled = true
     document.getElementById("stay").disabled = true
+    document.getElementById("deal").disabled = false
 
     canvas.style.backgroundImage = "url('https://media.istockphoto.com/photos/poker-table-picture-id1046326882?k=20&m=1046326882&s=612x612&w=0&h=G7D7aw9iB8p1A9LH26O9e6p8Pt5p82B44MbWPrIZmRo=')"
 
@@ -717,18 +719,18 @@ reset.addEventListener("click", function restart () {
     let dealerScore = document.getElementById("result")
     dealerScore.innerText = " "
     
-    let gameInProgress = false
-    let playerTurn = true
-    let gameOver = false
-    let dealerCards = []
-    let playerCards = []
+    gameInProgress = false
+    playerTurn = true
+    gameOver = false
+    dealerCards = []
+    playerCards = []
     const result = document.querySelector("#result")
-    let hitCounter = 0
-    let dealerWins = 0
-    let playerWins = 0
-    let pushCount = 0
-    let moneyTracker = 1000
-    let betAmount = 0
+    hitCounter = 0
+    dealerWins = 0
+    playerWins = 0
+    pushCount = 0
+    moneyTracker = 1000
+    betAmount = 0
 
 
 })
