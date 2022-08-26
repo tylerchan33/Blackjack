@@ -93,7 +93,7 @@ Table Photo: https://media.istockphoto.com/photos/poker-table-picture-id10463268
 Table Border Photo: https://img.freepik.com/free-photo/wooden-textured-background_53876-14865.jpg?t=st=1661384010~exp=1661384610~hmac=11f53a30d9c86b7e2e06b230413bf4fa72b4f3460f4f82b33757e37e9de089b5
 Top Display Gif: https://giphy.com/gifs/xcopy-jQS9YkJXofyeI?utm_source=media-link&utm_medium=landing&utm_campaign=Media%20Links&utm_term=
 Jigsaw Pic: https://www.pngitem.com/middle/iJhiwJ_film-horror-jigsaw-movie-saw-png-image-jigsaw/
-Broke Gif: https://giphy.com/gifs/mrw-month-middle-yIxNOXEMpqkqA?utm_source=media-link&utm_medium=landing&utm_campaign=Media%20Links&utm_term=
+Broke Gif: https://c.tenor.com/hZsQ7CUYakAAAAAC/saw22-saw.gif
 Wrong Bet Gif: https://c.tenor.com/FF9eF7bkSc4AAAAC/im-here-jigsaw.gif
 Jigsaw Facedown Card: https://www.pinterest.com/pin/661607001484847535/
 

@@ -395,7 +395,8 @@ function dealButton () {
     aceCount = 0
     if (moneyTracker === 0) {
         playerScore.innerText = `You're broke!  Get out of here!!!`
-        canvas.style.backgroundImage = "url('https://media2.giphy.com/media/yIxNOXEMpqkqA/giphy.gif?cid=ecf05e47rttrc7tz092a1uu9flirbo63yu26punjhco0qi82&rid=giphy.gif&ct=g')"
+        canvas.style.backgroundImage = "url('https://c.tenor.com/hZsQ7CUYakAAAAAC/saw22-saw.gif')"
+        canvas.style.backgroundSize = "cover"
         return
     }
     else if (betAmount > moneyTracker || betAmount < 1) {
@@ -487,8 +488,6 @@ function playerTotal () {
     }
     let playerScore = document.getElementById("playerTotal")
     playerScore.innerText = `You have: ${playerTotals}.`
-    let moneyTotal = document.getElementById("money")
-    moneyTotal.innerText = `Bank: $${moneyTracker}`
     return playerTotals 
 }
 playerTotal ()
@@ -529,8 +528,9 @@ function gameStatus () {
         document.getElementById("doubleDown").disabled = true
         document.getElementById("deal").disabled = false
         result.innerText = `Both of you have ${playerScore}!  Push!`
-        console.log("game1")
         pushCount++
+        let moneyTotal = document.getElementById("money")
+        moneyTotal.innerText = `Bank: $${moneyTracker}`
         return
     }
     else if (dealerScore == 21 && dealerCards.length == 2) {
@@ -545,7 +545,8 @@ function gameStatus () {
         result.innerText = "Jigsaw has blackjack! You lose!"
         moneyTracker = moneyTracker - betAmount
         dealerWins++
-        console.log("game2")
+        let moneyTotal = document.getElementById("money")
+        moneyTotal.innerText = `Bank: $${moneyTracker}`
         return
     }
     else if (playerScore == 21 && (playerCards.length == 2)) {
@@ -560,7 +561,8 @@ function gameStatus () {
         gameOver = true
         moneyTracker = parseInt(moneyTracker) + parseInt((betAmount * (3 / 2))) 
         playerWins++
-        console.log("game3")
+        let moneyTotal = document.getElementById("money")
+        moneyTotal.innerText = `Bank: $${moneyTracker}`
         return
     }
     else if (playerScore > 21) {
@@ -575,7 +577,8 @@ function gameStatus () {
         document.getElementById("deal").disabled = false
         moneyTracker = moneyTracker - betAmount
         dealerWins++
-        console.log("game4")
+        let moneyTotal = document.getElementById("money")
+        moneyTotal.innerText = `Bank: $${moneyTracker}`
         return
     }
     else if (dealerScore > 21) {
@@ -587,7 +590,8 @@ function gameStatus () {
         result.innerText = `Jigsaw has ${dealerScore}.  Jigsaw busts! You win!`
         moneyTracker = parseInt(moneyTracker) + parseInt(betAmount)
         playerWins++
-        console.log("game5")
+        let moneyTotal = document.getElementById("money")
+        moneyTotal.innerText = `Bank: $${moneyTracker}`
         return
     }
     else if (playerTurn == false && dealerScore >= 17 && dealerScore > playerScore) {
@@ -599,7 +603,8 @@ function gameStatus () {
         result.innerText = `Jigsaw has ${dealerScore}! Jigsaw wins!`
         moneyTracker = moneyTracker - betAmount
         dealerWins++
-        console.log("game6")
+        let moneyTotal = document.getElementById("money")
+        moneyTotal.innerText = `Bank: $${moneyTracker}`
         return
     }
     else if (playerTurn == false && dealerScore >= 17 && dealerScore < playerScore) {
@@ -611,7 +616,8 @@ function gameStatus () {
         result.innerText = `Jigsaw has ${dealerScore}.  You win!`
         moneyTracker = parseInt(moneyTracker) + parseInt(betAmount)
         playerWins++
-        console.log("game7")
+        let moneyTotal = document.getElementById("money")
+        moneyTotal.innerText = `Bank: $${moneyTracker}`
         return
     } 
 }
