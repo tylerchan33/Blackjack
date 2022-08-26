@@ -92,15 +92,25 @@ As a whole, I think this project was pretty fun.  I definitely learned a lot thr
 ## Sources 
 
 Playing Card Pics: https://code.google.com/archive/p/vector-playing-cards/downloads
+
 Poker Chips: https://www.deluxe.com/products/promotional/clay-poker-chip-suited-style/1441/
+
 Money gif: https://giphy.com/gifs/swag-money-publicdomaindiva-12Eo7WogCAoj84
+
 Card Background Gif: https://giphy.com/gifs/player-poker-bet-3ov9jUCYetT3GVwcy4?utm_source=media-link&utm_medium=landing&utm_campaign=Media%20Links&utm_term=
+
 Table Photo: https://media.istockphoto.com/photos/poker-table-picture-id1046326882?k=20&m=1046326882&s=612x612&w=0&h=G7D7aw9iB8p1A9LH26O9e6p8Pt5p82B44MbWPrIZmRo=
+
 Table Border Photo: https://img.freepik.com/free-photo/wooden-textured-background_53876-14865.jpg?t=st=1661384010~exp=1661384610~hmac=11f53a30d9c86b7e2e06b230413bf4fa72b4f3460f4f82b33757e37e9de089b5
+
 Top Display Gif: https://giphy.com/gifs/xcopy-jQS9YkJXofyeI?utm_source=media-link&utm_medium=landing&utm_campaign=Media%20Links&utm_term=
+
 Jigsaw Pic: https://www.pngitem.com/middle/iJhiwJ_film-horror-jigsaw-movie-saw-png-image-jigsaw/
+
 Broke Gif: https://c.tenor.com/hZsQ7CUYakAAAAAC/saw22-saw.gif
+
 Wrong Bet Gif: https://c.tenor.com/FF9eF7bkSc4AAAAC/im-here-jigsaw.gif
+
 Jigsaw Facedown Card: https://www.pinterest.com/pin/661607001484847535/
 
 
