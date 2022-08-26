@@ -13,10 +13,11 @@ body {
     font-size: 50px;
     color: rgb(196, 6, 6);
     font-family: "Creepster"
-    
-    
-
-    
+}
+#howToPlay {
+    text-align: center;
+    border-radius: 50%;
+    width: 200px;
 }
 main {
     display: flex;

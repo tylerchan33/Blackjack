@@ -2,6 +2,8 @@
 
 ### Rules:
 
+https://tylerchan33.github.io/Blackjack/
+
 Just a simple game of blackjack against Jigsaw.
 
 You start with $1000.  Play against Jigsaw as you try to become rich.  
@@ -9,6 +11,8 @@ You start with $1000.  Play against Jigsaw as you try to become rich.
 Place your bet amount in the bet box and deal to start having fun!
 
 Normal rules to blackjack apply, however Jigsaw does not believe in insurance or splitting pairs.  
+
+https://bicyclecards.com/how-to-play/blackjack/
 
 ---
 

@@ -6,13 +6,45 @@ window.onload = function (e) {
     document.getElementById("hit").disabled = true
     document.getElementById("stay").disabled = true
 
-    ctx.font = "50px Creepster"
+    ctx.font = "30px Creepster"
     ctx.fillStyle = "rgb(156, 22, 22)"
-    ctx.fillText("Do you wanna play a game?", (canvas.width / 2) - 250, canvas.height / 2 - 100)
-    ctx.fillText("Please hit the deal button to start.", (canvas.width / 2) - 350, canvas.height / 2 - 50)
+    ctx.fillText("How To Play:", (canvas.width /2) - 80, 25)
+    ctx.strokeStyle = "black"
+    ctx.strokeText("How To Play:", (canvas.width /2) - 80, 25)
+    ctx.font = "20px Creepster"
+    ctx.strokeStyle = "black"
+    ctx.fillText("- The rules are like a normal game of Blackjack, except Jigsaw doesn't believe in insurance or splitting pairs.", 4, 45)
+    ctx.strokeText("- The rules are like a normal game of Blackjack, except Jigsaw doesn't believe in insurance or splitting pairs.", 4, 45)
+    ctx.fillText("- The goal of Jigsaw Blackjack is to for your hand value be worth more than Jigsaw's without going over 21.", 4, 65)
+    ctx.strokeText("- The goal of Jigsaw Blackjack is to for your hand value be worth more than Jigsaw's without going over 21.", 4, 65)
+    ctx.fillText("- The numerical cards are worth the number on their card.  Face cards are worth 10 and Aces are worth 1 or 11.", 4, 85)
+    ctx.strokeText("- The numerical cards are worth the number on their card.  Face cards are worth 10 and Aces are worth 1 or 11.", 4, 85)
+    ctx.fillText("- Place your bet then you and Jigsaw are dealt two cards, where one of Jigsaw's cards is facedown.", 4, 105)
+    ctx.strokeText("- Place your bet then you and Jigsaw are dealt two cards, where one of Jigsaw's cards is facedown.", 4, 105)
+    ctx.fillText("- After your hand is dealt, you have the option to hit, stay, or double down (see more information below). After finishing", 4, 125)
+    ctx.strokeText("- After your hand is dealt, you have the option to hit, stay, or double down (see more information below). After finishing", 4, 125)
+    ctx.fillText("    your actions, it is Jigsaw's turn.  Jigsaw must continue drawing cards until his hand value is 17 or more, unless he has", 4, 145)
+    ctx.strokeText("    your actions, it is Jigsaw's turn.  Jigsaw must continue drawing cards until his hand value is 17 or more, unless he has", 4, 145)
+    ctx.fillText("    a soft 17.  A soft 17 is when Jigsaw's hand value is 17, Jigsaw has an ace in his hand, and is able to hit without going", 4, 165)
+    ctx.strokeText("    a soft 17.  A soft 17 is when Jigsaw's hand value is 17, Jigsaw has an ace in his hand, and is able to hit without going", 4, 165)
+    ctx.fillText("    over 21.  If both your hand and Jigsaw's hand values are 21 or less, then whoever has the higher hand value wins.", 4, 185)
+    ctx.strokeText("    over 21.  If both your hand and Jigsaw's hand values are 21 or less, then whoever has the higher hand value wins.", 4, 185)
+    ctx.fillText("- Beware: If your hand value exceeds 21, you lose.  If Jigsaw's hand exceeds 21, then you win.", 4, 205)
+    ctx.strokeText("- Beware: If your hand value exceeds 21, you lose.  If Jigsaw's hand exceeds 21, then you win.", 4, 205)
+    ctx.fillText("- Hit: You will receive another card and as long as your hand value is 21 or less, you may continue to hit ", 4, 225)
+    ctx.strokeText("- Hit: You will receive another card and as long as your hand value is 21 or less, you may continue to hit ", 4, 225)
+    ctx.fillText("- Stay: You are content with your hand and would like to turn it over to Jigsaw.", 4, 245)
+    ctx.strokeText("- Stay: You are content with your hand and would like to turn it over to Jigsaw.", 4, 245)
+    ctx.fillText("- Double Down: You place a bet equal to the amount of your original bet and receive one card.  It is then Jigsaw's turn.", 4, 265)
+    ctx.strokeText("- Double Down: You place a bet equal to the amount of your original bet and receive one card.  It is then Jigsaw's turn.", 4, 265)
+    
+    ctx.font = "40px Creepster"
+    ctx.fillStyle = "black"
+    ctx.fillText("Do you wanna play a game?  Please set your bet", 20 , canvas.height  - 70)
+    ctx.fillText("amount and hit the deal button to start.", 20, canvas.height  - 30)
     
     let jigsaw = document.querySelector("#jigsaw")
-    ctx.drawImage(jigsaw, canvas.width / 2 - 100, canvas.height / 2 , 200, 150)
+    ctx.drawImage(jigsaw, canvas.width - 200, canvas.height -100 , 180, 130)
     
    
     document.getElementById("doubleDown").disabled = true
