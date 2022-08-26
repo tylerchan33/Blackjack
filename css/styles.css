@@ -3,6 +3,7 @@ body {
     background-image: url("https://media0.giphy.com/media/3ov9jUCYetT3GVwcy4/giphy.gif?cid=ecf05e479fyhirrrjjko1n8x5wutk3pz1gy6753o73s01ve5&rid=giphy.gif&ct=g");
     background-size: cover;
     margin: 0px;   
+    
 }
 img {
     display: none;
@@ -132,40 +133,47 @@ button {
     background-image: url("https://ihfiles.com/products/21/1441/p/4/979900.jpeg");
     background-size: cover;
     color: black;
+    font-family: "Georgia";
 }
 
 #bet {
     border-radius: 0;
     color: white;
+    font-family: "Georgia";
     background-image: url("https://media1.giphy.com/media/12Eo7WogCAoj84/giphy.gif?cid=790b7611ca8deb55d51b9ab4a4849eda6a25561d4eea78ae&rid=giphy.gif&ct=g");
 }
 
 input {
     width: 60%;
+    font-family: "Georgia";
 }
 
 #deal {
     background-image: url("https://ihfiles.com/products/21/1441/p/4/979870.jpeg");
     background-size: cover;
     color: white;
+    font-family: "Georgia";
 }
 
 #hit {
     background-image: url("https://ihfiles.com/products/21/1441/p/4/979905.jpeg");
     background-size: cover;
     color: white;   
+    font-family: "Georgia";
 }
 
 #stay {
     background-image: url("https://ihfiles.com/products/21/1441/p/4/979895.jpeg");
     background-size: cover;
     color: white;
+    font-family: "Georgia";
 }
 
 #doubleDown {
     background-image: url("https://ihfiles.com/products/21/1441/p/4/979860.jpeg");
     background-size: cover;
     color: white;
+    font-family: "Georgia";
 }
 
 #hit:hover:enabled {
