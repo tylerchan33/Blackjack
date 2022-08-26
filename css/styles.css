@@ -2,9 +2,7 @@
 body {
     background-image: url("https://media0.giphy.com/media/3ov9jUCYetT3GVwcy4/giphy.gif?cid=ecf05e479fyhirrrjjko1n8x5wutk3pz1gy6753o73s01ve5&rid=giphy.gif&ct=g");
     background-size: cover;
-    margin: 0px;
-
-    
+    margin: 0px;    
 }
 
 #nameOfGame {
@@ -14,15 +12,9 @@ body {
     color: rgb(196, 6, 6);
     font-family: "Creepster"
 }
-#howToPlay {
-    text-align: center;
-    border-radius: 50%;
-    width: 200px;
-}
 main {
     display: flex;
     justify-content: center;
-
 }
 h1 {
     margin-bottom: 0px;
@@ -36,24 +28,25 @@ canvas {
     background-image: url("https://media.istockphoto.com/photos/poker-table-picture-id1046326882?k=20&m=1046326882&s=612x612&w=0&h=G7D7aw9iB8p1A9LH26O9e6p8Pt5p82B44MbWPrIZmRo=");
     background-size: cover;
     background-position: 0% 60%; 
-    width: 65vw;
-    height: 50vh;  
+    width: 75vw;
+    height: 55vh;  
     border: 10px solid transparent;
     border-image-repeat: round;
     border-image-slice: 10;
     border-image-source: url("https://img.freepik.com/free-photo/wooden-textured-background_53876-14865.jpg?t=st=1661384010~exp=1661384610~hmac=11f53a30d9c86b7e2e06b230413bf4fa72b4f3460f4f82b33757e37e9de089b5");
 }
 
-.boxes {
-    display: flex;
-    justify-content: center;
-}
-
-
-
 .cards {
     height: 10px;
     width: 15px;
+    display: none;
+}
+
+#jigsaw {
+    display: none;
+}
+
+#dealerHidden {
     display: none;
 }
 
@@ -63,7 +56,6 @@ button {
     width: 100px;
     margin-left: 20px;  
     border: 2px solid black;
-    
 }
 
 .buttons {
@@ -72,23 +64,6 @@ button {
     justify-content: center;
 }
 
-#hit {
-    background-color: black;
-    color: white;   
-}
-#deal {
-    background-color: green;
-    color: white;
-    
-}
-#stay {
-    background-color: rgb(196, 6, 6);
-    color: white;
-}
-#doubleDown {
-    background-color: blue;
-    color: white;
-}
 #result {
     font-size: 25px;
     margin-top: 5px;
@@ -104,6 +79,21 @@ button {
     margin-right: auto;
     text-align: center;
     border-radius: 50%;
+}
+
+.scoreboard {
+    display: flexbox;
+    color: white;   
+    background-color: maroon;
+    border-radius: 30%;
+    border: 2px solid rgb(230, 230, 19);
+    box-shadow: 0px 0px 10px 10px rgb(211, 211, 142);
+    width: 500px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    text-align: center;
 }
 
 #playerTotal {
@@ -126,58 +116,64 @@ button {
     margin-bottom: 0px;
 }
 
-#jigsaw {
-    display: none;
-}
-#newGame {
-    border-radius: 90%;
-    width: 150px;
-    margin-top: 0px;
-    
-    background-size: cover;
-    
+#reset {
+    border-radius: 50%;
+    width: 200px;
+    background-color:rgb(0, 0, 0);
+    color: white;
 }
 
-#dealerHidden {
-    display: none;
-}
-
-
-#newGame:hover:enabled {
-    border-color: rgba(255, 255, 255, 1);
-  }
-  #hit:hover:enabled {
-    border-color: rgba(255, 255, 255, 1);
-    
-  }
-  #stay:hover:enabled {
-    border-color: rgba(255, 255, 255, 1);
-  }
-  #deal:hover:enabled {
-    border-color: rgba(255, 255, 255, 1);
-  }
-  #doubleDown:hover:enabled {
-    border-color: rgba(255, 255, 255, 1);
-  }
-  
-.scoreboard {
-    display: flexbox;
+#hit {
+    background-color: black;
     color: white;   
-    background-color: maroon;
-    border-radius: 30%;
-    border: 2px solid rgb(230, 230, 19);
-    box-shadow: 0px 0px 10px 10px rgb(211, 211, 142);
-    width: 500px;
-    margin-top: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    justify-content: center;
-    text-align: center;
+}
+
+#bet {
+    border-radius: 0;
+    color: white;
+    background-color: rgb(17, 140, 79);
 }
 
 input {
     width: 60%;
 }
-#bet {
-    border-radius: 0;
+
+#deal {
+    background-color: green;
+    color: white;
+    
 }
+#stay {
+    background-color: rgb(196, 6, 6);
+    color: white;
+}
+#doubleDown {
+    background-color: blue;
+    color: white;
+}
+
+#newGame:hover:enabled {
+    border-color: rgba(255, 255, 255, 1);
+  }
+
+#hit:hover:enabled {
+    border-color: rgba(255, 255, 255, 1);
+}
+
+#stay:hover:enabled {
+    border-color: rgba(255, 255, 255, 1);
+}
+  
+#deal:hover:enabled {
+    border-color: rgba(255, 255, 255, 1);
+}
+
+#doubleDown:hover:enabled {
+    border-color: rgba(255, 255, 255, 1);
+}
+
+#reset:hover:enabled {
+    border-color: rgba(255, 255, 255, 1);
+}
+
+
