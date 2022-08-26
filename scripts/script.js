@@ -371,16 +371,22 @@ const cardPics = deck().map((cards) => {
 })
 
 
-// found the fisher-yates shuffle online
-function shuffleDeck(array) {
-    let currentIndex = array.length, randomIndex;
-    while (currentIndex != 0) {
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex--
-        [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]]
+
+function shuffleDeck(fullDeck) {
+    // let currentIndex = fullDeck.length
+    let randomIndex = 0;
+    // while (currentIndex != 0) 
+    for (let i = 0; i < fullDeck.length; i++) {
+        randomIndex = Math.floor(Math.random() * i);
+        // currentIndex--
+        [fullDeck[i], fullDeck[randomIndex]] = [fullDeck[randomIndex], fullDeck[i]]
     }
-    return array
+    
+    return fullDeck
+    
 }
+
+for (let i = 0; i < fullDeck.length; i++)
 
 shuffleDeck(fullDeck)
 let newDeck = shuffleDeck(fullDeck)
