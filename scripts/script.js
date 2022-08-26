@@ -5,59 +5,64 @@ window.onload = function (e) {
     canvas.setAttribute("width", getComputedStyle(canvas)["width"])
     document.getElementById("hit").disabled = true
     document.getElementById("stay").disabled = true
+    document.getElementById("doubleDown").disabled = true
+    let playerScore = document.getElementById("playerTotal")
+    playerScore.innerText = `Good luck! You start with $1000!`
+    let dealerScore = document.getElementById("result")
+    dealerScore.innerText = " "
+    let moneyTotal = document.getElementById("money")
+    moneyTotal.innerText = " "
 
     ctx.font = "30px Creepster"
     ctx.fillStyle = "rgb(223, 12, 12)"
     ctx.fillText("How To Play:", (canvas.width /2) - 80, 25)
     ctx.strokeStyle = "black"
     ctx.strokeText("How To Play:", (canvas.width /2) - 80, 25)
-    ctx.font = "25px Creepster"
+    ctx.font = "28px Creepster"
     ctx.strokeStyle = "black"
-    ctx.fillText("- The rules are like a normal game of Blackjack, except Jigsaw doesn't believe in insurance or splitting pairs.", 4, 50)
-    ctx.fillText("- The goal of Jigsaw Blackjack is to for your hand value be worth more than Jigsaw's without going over 21.", 4, 72)
-    ctx.fillText("- The numerical cards are worth the number on their card.  Face cards are worth 10 and Aces are worth 1 or 11.", 4, 94)
-    ctx.fillText("- Place your bet then you and Jigsaw are dealt two cards, where one of Jigsaw's cards is facedown.", 4, 116)
-    ctx.fillText("  After your hand is dealt, you have the option to hit, stay, or double down (see more information below).", 4, 138)
-    ctx.fillText("  After finishing your actions, it is Jigsaw's turn.  Jigsaw must continue drawing cards until his hand value", 4, 160)
-    ctx.fillText("  is 17 or more, unless he has a soft 17.  A soft 17 is when Jigsaw's hand value is 17, Jigsaw has an ace in", 4, 182)
-    ctx.fillText("  his hand, and is able to hit without going over 21.  If both your hand and Jigsaw's hand values are 21 or less,", 4, 204)
-    ctx.fillText("  then whoever has the higher hand value wins.  Beware: If your hand value exceeds 21, you lose.  If Jigsaw's", 4, 226)
-    ctx.fillText("  hand exceeds 21, then you win.  Blackjack pays 3:2.", 4, 248)
-    ctx.fillText("- Hit: You will receive another card and as long as your hand value is 21 or less, you may continue to hit ", 4, 270)
-    ctx.fillText("- Stay: You are content with your hand and would like to turn it over to Jigsaw.", 4, 292)
-    ctx.fillText("- Double Down: You place a bet equal to the amount of your original bet and receive only one card.  It is then", 4, 314)
-    ctx.fillText("  Jigsaw's turn.  If you win, you win both your original and double down bet.  If you lose, you lose both bets.", 4, 336)
-    ctx.strokeText("- The rules are like a normal game of Blackjack, except Jigsaw doesn't believe in insurance or splitting pairs.", 4, 50)
-    ctx.strokeText("- The goal of Jigsaw Blackjack is to for your hand value be worth more than Jigsaw's without going over 21.", 4, 72)
-    ctx.strokeText("- The numerical cards are worth the number on their card.  Face cards are worth 10 and Aces are worth 1 or 11.", 4, 94)
-    ctx.strokeText("- Place your bet then you and Jigsaw are dealt two cards, where one of Jigsaw's cards is facedown.", 4, 116)
-    ctx.strokeText("  After your hand is dealt, you have the option to hit, stay, or double down (see more information below).", 4, 138)
-    ctx.strokeText("  After finishing your actions, it is Jigsaw's turn.  Jigsaw must continue drawing cards until his hand value", 4, 160)
-    ctx.strokeText("  is 17 or more, unless he has a soft 17.  A soft 17 is when Jigsaw's hand value is 17, Jigsaw has an ace in", 4, 182)
-    ctx.strokeText("  his hand, and is able to hit without going over 21.  If both your hand and Jigsaw's hand values are 21 or less,", 4, 204)
-    ctx.strokeText("  then whoever has the higher hand value wins.  Beware: If your hand value exceeds 21, you lose.  If Jigsaw's", 4, 226)
-    ctx.strokeText("  hand exceeds 21, then you win.  Blackjack pays 3:2.", 4, 248)
-    ctx.strokeText("- Hit: You will receive another card and as long as your hand value is 21 or less, you may continue to hit ", 4, 270)
-    ctx.strokeText("- Stay: You are content with your hand and would like to turn it over to Jigsaw.", 4, 292)
-    ctx.strokeText("- Double Down: You place a bet equal to the amount of your original bet and receive only one card.  It is then", 4, 314)
-    ctx.strokeText("  Jigsaw's turn.  If you win, you win both your original and double down bet.  If you lose, you lose both bets.", 4, 336)
-  
-    
-    ctx.font = "40px Creepster"
+    ctx.fillText("- The rules are the same as regular Blackjack, except Jigsaw doesn't believe in insurance or splitting ", 4, 50)
+    ctx.fillText("  pairs. The goal of Jigsaw Blackjack is to for your hand value be worth more than Jigsaw's without", 4, 75)
+    ctx.fillText("  going over 21. Jigsaw hits on soft 17 and Blackjack pays 3 : 2.", 4, 100)
+    ctx.fillText("- Place your bet amount and then click on the deal button to start the fun.  Go through any of", 4, 125)
+    ctx.fillText("   your possible button actions (see below for more information) and beat Jigsaw!  Keep your", 4, 150)
+    ctx.fillText("   same bet or change it up, then press the deal button to play again!", 4, 175)
+    ctx.font = "30px Creepster"
+    ctx.fillStyle = "rgb(65,105,225)"
+    ctx.fillText("Buttons:", (canvas.width /2) - 60, 205)
+    ctx.strokeStyle = "black"
+    ctx.strokeText("Buttons:", (canvas.width /2) - 60, 205)
+    ctx.font = "28px Creepster"
+    ctx.fillStyle = "rgb(65,105,225)"
+    ctx.fillText("- New session: Broke?  Jigsaw dominating you? Press this button to start a session from scratch.", 4, 230)
+    ctx.fillText("- Deal: Win? Lose? Push? Press this button to start a new hand.", 4, 255)
+    ctx.fillText("- Hit: You will receive another card and if your hand value is 21 or less, you may continue to hit.", 4, 280)
+    ctx.fillText("- Stay: You are content with your hand and would like to turn it over to Jigsaw.", 4, 305)
+    ctx.fillText("- Double Down: You place a bet equal to the amount of your original bet and receive only one card.", 4, 330)
+    ctx.fillText("   It is then turned over to Jigsaw.  You can potentially win double your bet or lose double your bet.", 4, 355)
+    ctx.strokeStyle = "black"
+    ctx.strokeText("- The rules are the same as regular Blackjack, except Jigsaw doesn't believe in insurance or splitting ", 4, 50)
+    ctx.strokeText("  pairs. The goal of Jigsaw Blackjack is to for your hand value be worth more than Jigsaw's without", 4, 75)
+    ctx.strokeText("  going over 21. Jigsaw hits on soft 17 and Blackjack pays 3 : 2.", 4, 100)
+    ctx.strokeText("- Place your bet amount and then click on the deal button to start the fun.  Go through any of", 4, 125)
+    ctx.strokeText("   your possible button actions (see below for more information) and beat Jigsaw!  Keep your", 4, 150)
+    ctx.strokeText("   same bet or change it up, then press the deal button to play again!", 4, 175)
+    ctx.strokeText("- New session: Broke?  Jigsaw dominating you? Press this button to start a session from scratch.", 4, 230)
+    ctx.strokeText("- Deal: Win? Lose? Push? Press this button to start a new hand.", 4, 255)
+    ctx.strokeText("- Hit: You will receive another card and if your hand value is 21 or less, you may continue to hit.", 4, 280)
+    ctx.strokeText("- Stay: You are content with your hand and would like to turn it over to Jigsaw.", 4, 305)
+    ctx.strokeText("- Double Down: You place a bet equal to the amount of your original bet and receive only one card.", 4, 330)
+    ctx.strokeText("   It is then turned over to Jigsaw.  You can potentially win double your bet or lose double your bet.", 4, 355)
+ 
+
+    ctx.font = "30px Creepster"
     ctx.fillStyle = "black"
-    ctx.fillText("Do you wanna play a game?  Please set your bet amount ", 20 , canvas.height  - 45)
-    ctx.fillText("and hit the deal button to start.", 20, canvas.height  - 10)
+    ctx.fillText("Do you wanna play a game?  Please set your bet amount ", 20 , canvas.height  - 30)
+    ctx.fillText("and hit the deal button to start.", 20, canvas.height - 5)
     
     let jigsaw = document.querySelector("#jigsaw")
-    ctx.drawImage(jigsaw, canvas.width - 200, canvas.height - 75, 130, 100)
-    
+    ctx.drawImage(jigsaw, canvas.width/ 2 + 100, canvas.height - 60, 110, 80)
    
-    document.getElementById("doubleDown").disabled = true
-    
-    let playerScore = document.getElementById("playerTotal")
-    playerScore.innerText = `Good luck! You start with $1000!`
-    let dealerScore = document.getElementById("result")
-    dealerScore.innerText = " "
+   
 
     
 }   
@@ -329,13 +334,12 @@ const cards = {
 }
 
 
-
+const result = document.querySelector("#result")
 let gameInProgress = false
 let playerTurn = true
 let gameOver = false
 let dealerCards = []
 let playerCards = []
-const result = document.querySelector("#result")
 let hitCounter = 0
 let dealerWins = 0
 let playerWins = 0
@@ -356,7 +360,6 @@ function deck () {
             let card = `${cardNames[i]}Of${cardSuits[j]}`
             allCards.push(card)
             }
-        
     }    
     return allCards   
 }
@@ -368,7 +371,6 @@ const cardPics = deck().map((cards) => {
 
 
 // found the fisher-yates shuffle online
-
 function shuffleDeck(array) {
     let currentIndex = array.length, randomIndex;
     while (currentIndex != 0) {
@@ -377,9 +379,6 @@ function shuffleDeck(array) {
         [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]]
     }
     return array
-    
-    
-    
 }
 
 shuffleDeck(fullDeck)
@@ -404,11 +403,9 @@ function dealButton () {
         return
     }
     else if (betAmount > moneyTracker || betAmount < 1) {
-        
         playerScore.innerText = `You have $${moneyTracker}. Please place a bet between $1 and $${moneyTracker}`
         canvas.style.backgroundImage = "url('https://c.tenor.com/FF9eF7bkSc4AAAAC/im-here-jigsaw.gif')"
         canvas.style.backgroundPosition = "0% 0%"
-        
     }
     else if (gameOver == false) {
         if ((betAmount * 2) > moneyTracker) {
@@ -423,6 +420,8 @@ function dealButton () {
         document.getElementById("stay").disabled = false
 
         canvas.style.backgroundImage = "url('https://media.istockphoto.com/photos/poker-table-picture-id1046326882?k=20&m=1046326882&s=612x612&w=0&h=G7D7aw9iB8p1A9LH26O9e6p8Pt5p82B44MbWPrIZmRo=')"
+        let jigsawUpsideDown = document.querySelector("#jigsawUpsideDown")
+        ctx.drawImage(jigsawUpsideDown, canvas.width/ 2 - 250, 0, 150, 120)
         
         let dealerCard1 = newDeck.shift()
         let dealerCard2 = newDeck.shift()
@@ -451,7 +450,7 @@ function dealButton () {
     }
     else if (gameOver == true) {
         let wins = document.getElementById("score")
-        wins.innerText = `Player wins: ${playerWins}\u00A0\u00A0\u00A0\u00A0Jigsaw wins: ${dealerWins}\u00A0\u00A0\u00A0\u00A0 Pushes: ${pushCount}`
+        wins.innerText = `Your wins: ${playerWins}\u00A0\u00A0\u00A0\u00A0Jigsaw wins: ${dealerWins}\u00A0\u00A0\u00A0\u00A0 Pushes: ${pushCount}`
         playerTurn = true
         hitCounter = 0
         gameOver = false
@@ -491,8 +490,9 @@ function playerTotal () {
         }  
     }
     let playerScore = document.getElementById("playerTotal")
-    playerScore.innerText = `You have: ${playerTotals}.
-     Bank: $${moneyTracker}`
+    playerScore.innerText = `You have: ${playerTotals}.`
+    let moneyTotal = document.getElementById("money")
+    moneyTotal.innerText = `Bank: $${moneyTracker}`
     return playerTotals 
 }
 playerTotal ()
@@ -512,7 +512,6 @@ function dealerTotal () {
             dealerTotals = dealerTotals - 10
             aceCount--
         }
-       
     }
     dealerAces = aceCount
     return dealerTotals
@@ -537,7 +536,6 @@ function gameStatus () {
         console.log("game1")
         pushCount++
         return
-
     }
     else if (dealerScore == 21 && dealerCards.length == 2) {
         gameOver = true
@@ -590,7 +588,7 @@ function gameStatus () {
         document.getElementById("hit").disabled = true
         document.getElementById("doubleDown").disabled = true
         document.getElementById("deal").disabled = false
-        result.innerText = `Jigsaw has ${dealerScore}!  Jigsaw busts! You win!`
+        result.innerText = `Jigsaw has ${dealerScore}.  Jigsaw busts! You win!`
         moneyTracker = parseInt(moneyTracker) + parseInt(betAmount)
         playerWins++
         console.log("game5")
@@ -633,11 +631,9 @@ function stayButton () {
     ctx.drawImage(img2, (canvas.width / 2) + 10, 10, 100, 140)
     dealerTurn1()
     gameStatus ()
-    
 }
 const stay = document.querySelector("#stay")
 stay.addEventListener("click", stayButton)
-
 
 const doubleDown = document.getElementById("doubleDown")
 doubleDown.addEventListener("click", function doubleDown () {
@@ -661,7 +657,6 @@ doubleDown.addEventListener("click", function doubleDown () {
         gameStatus()
         dealerTurn1() 
         gameStatus()
-        
     }
 })
 
@@ -671,83 +666,81 @@ reset.addEventListener("click", function restart () {
     const ctx = canvas.getContext("2d")
     canvas.setAttribute("height", getComputedStyle(canvas)["height"])
     canvas.setAttribute("width", getComputedStyle(canvas)["width"])
+    const result = document.querySelector("#result")
     document.getElementById("hit").disabled = true
     document.getElementById("stay").disabled = true
     document.getElementById("deal").disabled = false
+    document.getElementById("doubleDown").disabled = true
 
     canvas.style.backgroundImage = "url('https://media.istockphoto.com/photos/poker-table-picture-id1046326882?k=20&m=1046326882&s=612x612&w=0&h=G7D7aw9iB8p1A9LH26O9e6p8Pt5p82B44MbWPrIZmRo=')"
 
-
+    
     gameInProgress = false
     playerTurn = true
     gameOver = false
     dealerCards = []
     playerCards = []
-    const result = document.querySelector("#result")
     hitCounter = 0
     dealerWins = 0
     playerWins = 0
     pushCount = 0
     moneyTracker = 1000
     betAmount = 0
+
     ctx.font = "30px Creepster"
     ctx.fillStyle = "rgb(223, 12, 12)"
     ctx.fillText("How To Play:", (canvas.width /2) - 80, 25)
     ctx.strokeStyle = "black"
     ctx.strokeText("How To Play:", (canvas.width /2) - 80, 25)
-    ctx.font = "25px Creepster"
+    ctx.font = "28px Creepster"
     ctx.strokeStyle = "black"
-    ctx.fillText("- The rules are like a normal game of Blackjack, except Jigsaw doesn't believe in insurance or splitting pairs.", 4, 50)
-    ctx.fillText("- The goal of Jigsaw Blackjack is to for your hand value be worth more than Jigsaw's without going over 21.", 4, 72)
-    ctx.fillText("- The numerical cards are worth the number on their card.  Face cards are worth 10 and Aces are worth 1 or 11.", 4, 94)
-    ctx.fillText("- Place your bet then you and Jigsaw are dealt two cards, where one of Jigsaw's cards is facedown.", 4, 116)
-    ctx.fillText("  After your hand is dealt, you have the option to hit, stay, or double down (see more information below).", 4, 138)
-    ctx.fillText("  After finishing your actions, it is Jigsaw's turn.  Jigsaw must continue drawing cards until his hand value", 4, 160)
-    ctx.fillText("  is 17 or more, unless he has a soft 17.  A soft 17 is when Jigsaw's hand value is 17, Jigsaw has an ace in", 4, 182)
-    ctx.fillText("  his hand, and is able to hit without going over 21.  If both your hand and Jigsaw's hand values are 21 or less,", 4, 204)
-    ctx.fillText("  then whoever has the higher hand value wins.  Beware: If your hand value exceeds 21, you lose.  If Jigsaw's", 4, 226)
-    ctx.fillText("  hand exceeds 21, then you win.  Blackjack pays 3:2.", 4, 248)
-    ctx.fillText("- Hit: You will receive another card and as long as your hand value is 21 or less, you may continue to hit ", 4, 270)
-    ctx.fillText("- Stay: You are content with your hand and would like to turn it over to Jigsaw.", 4, 292)
-    ctx.fillText("- Double Down: You place a bet equal to the amount of your original bet and receive only one card.  It is then", 4, 314)
-    ctx.fillText("  Jigsaw's turn.  If you win, you win both your original and double down bet.  If you lose, you lose both bets.", 4, 336)
-    ctx.strokeText("- The rules are like a normal game of Blackjack, except Jigsaw doesn't believe in insurance or splitting pairs.", 4, 50)
-    ctx.strokeText("- The goal of Jigsaw Blackjack is to for your hand value be worth more than Jigsaw's without going over 21.", 4, 72)
-    ctx.strokeText("- The numerical cards are worth the number on their card.  Face cards are worth 10 and Aces are worth 1 or 11.", 4, 94)
-    ctx.strokeText("- Place your bet then you and Jigsaw are dealt two cards, where one of Jigsaw's cards is facedown.", 4, 116)
-    ctx.strokeText("  After your hand is dealt, you have the option to hit, stay, or double down (see more information below).", 4, 138)
-    ctx.strokeText("  After finishing your actions, it is Jigsaw's turn.  Jigsaw must continue drawing cards until his hand value", 4, 160)
-    ctx.strokeText("  is 17 or more, unless he has a soft 17.  A soft 17 is when Jigsaw's hand value is 17, Jigsaw has an ace in", 4, 182)
-    ctx.strokeText("  his hand, and is able to hit without going over 21.  If both your hand and Jigsaw's hand values are 21 or less,", 4, 204)
-    ctx.strokeText("  then whoever has the higher hand value wins.  Beware: If your hand value exceeds 21, you lose.  If Jigsaw's", 4, 226)
-    ctx.strokeText("  hand exceeds 21, then you win.  Blackjack pays 3:2.", 4, 248)
-    ctx.strokeText("- Hit: You will receive another card and as long as your hand value is 21 or less, you may continue to hit ", 4, 270)
-    ctx.strokeText("- Stay: You are content with your hand and would like to turn it over to Jigsaw.", 4, 292)
-    ctx.strokeText("- Double Down: You place a bet equal to the amount of your original bet and receive only one card.  It is then", 4, 314)
-    ctx.strokeText("  Jigsaw's turn.  If you win, you win both your original and double down bet.  If you lose, you lose both bets.", 4, 336)
-
-    ctx.font = "40px Creepster"
+    ctx.fillText("- The rules are the same as regular Blackjack, except Jigsaw doesn't believe in insurance or splitting ", 4, 50)
+    ctx.fillText("  pairs. The goal of Jigsaw Blackjack is to for your hand value be worth more than Jigsaw's without", 4, 75)
+    ctx.fillText("  going over 21. Jigsaw hits on soft 17 and Blackjack pays 3 : 2.", 4, 100)
+    ctx.fillText("- Place your bet amount and then click on the deal button to start the fun.  Go through any of", 4, 125)
+    ctx.fillText("   your possible button actions (see below for more information) and beat Jigsaw!  Keep your", 4, 150)
+    ctx.fillText("   same bet or change it up, then press the deal button to play again!", 4, 175)
+    ctx.font = "30px Creepster"
+    ctx.fillStyle = "rgb(65,105,225)"
+    ctx.fillText("Buttons:", (canvas.width /2) - 60, 205)
+    ctx.strokeStyle = "black"
+    ctx.strokeText("Buttons:", (canvas.width /2) - 60, 205)
+    ctx.font = "28px Creepster"
+    ctx.fillStyle = "rgb(65,105,225)"
+    ctx.fillText("- New session: Broke?  Jigsaw dominating you? Press this button to start a session from scratch.", 4, 230)
+    ctx.fillText("- Deal: Win? Lose? Push? Press this button to start a new hand.", 4, 255)
+    ctx.fillText("- Hit: You will receive another card and if your hand value is 21 or less, you may continue to hit.", 4, 280)
+    ctx.fillText("- Stay: You are content with your hand and would like to turn it over to Jigsaw.", 4, 305)
+    ctx.fillText("- Double Down: You place a bet equal to the amount of your original bet and receive only one card.", 4, 330)
+    ctx.fillText("   It is then turned over to Jigsaw.  You can potentially win double your bet or lose double your bet.", 4, 355)
+    ctx.strokeStyle = "black"
+    ctx.strokeText("- The rules are the same as regular Blackjack, except Jigsaw doesn't believe in insurance or splitting ", 4, 50)
+    ctx.strokeText("  pairs. The goal of Jigsaw Blackjack is to for your hand value be worth more than Jigsaw's without", 4, 75)
+    ctx.strokeText("  going over 21. Jigsaw hits on soft 17 and Blackjack pays 3 : 2.", 4, 100)
+    ctx.strokeText("- Place your bet amount and then click on the deal button to start the fun.  Go through any of", 4, 125)
+    ctx.strokeText("   your possible button actions (see below for more information) and beat Jigsaw!  Keep your", 4, 150)
+    ctx.strokeText("   same bet or change it up, then press the deal button to play again!", 4, 175)
+    ctx.strokeText("- New session: Broke?  Jigsaw dominating you? Press this button to start a session from scratch.", 4, 230)
+    ctx.strokeText("- Deal: Win? Lose? Push? Press this button to start a new hand.", 4, 255)
+    ctx.strokeText("- Hit: You will receive another card and if your hand value is 21 or less, you may continue to hit.", 4, 280)
+    ctx.strokeText("- Stay: You are content with your hand and would like to turn it over to Jigsaw.", 4, 305)
+    ctx.strokeText("- Double Down: You place a bet equal to the amount of your original bet and receive only one card.", 4, 330)
+    ctx.strokeText("   It is then turned over to Jigsaw.  You can potentially win double your bet or lose double your bet.", 4, 355)
+ 
+    ctx.font = "30px Creepster"
     ctx.fillStyle = "black"
-    ctx.fillText("Do you wanna play a game?  Please set your bet amount ", 20 , canvas.height  - 45)
-    ctx.fillText("and hit the deal button to start.", 20, canvas.height  - 10)
+    ctx.fillText("Do you wanna play a game?  Please set your bet amount ", 20 , canvas.height  - 30)
+    ctx.fillText("and hit the deal button to start.", 20, canvas.height - 5)
     
     let jigsaw = document.querySelector("#jigsaw")
-    ctx.drawImage(jigsaw, canvas.width - 200, canvas.height - 75, 130, 100)
-    
-   
-    document.getElementById("doubleDown").disabled = true
+    ctx.drawImage(jigsaw, canvas.width/ 2 + 100, canvas.height - 60, 110, 80)
     
     let playerScore = document.getElementById("playerTotal")
     playerScore.innerText = `Good luck! You start with $1000!`
     let dealerScore = document.getElementById("result")
     dealerScore.innerText = " "
     let wins = document.getElementById("score")
-    wins.innerText = `Player wins: ${playerWins}\u00A0\u00A0\u00A0\u00A0Jigsaw wins: ${dealerWins}\u00A0\u00A0\u00A0\u00A0 Pushes: ${pushCount}`
-    
-   
-    
-
-
+    wins.innerText = `Your wins: ${playerWins}\u00A0\u00A0\u00A0\u00A0Jigsaw wins: ${dealerWins}\u00A0\u00A0\u00A0\u00A0 Pushes: ${pushCount}`
 })
 
 

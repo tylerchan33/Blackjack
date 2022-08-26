@@ -2,7 +2,10 @@
 body {
     background-image: url("https://media0.giphy.com/media/3ov9jUCYetT3GVwcy4/giphy.gif?cid=ecf05e479fyhirrrjjko1n8x5wutk3pz1gy6753o73s01ve5&rid=giphy.gif&ct=g");
     background-size: cover;
-    margin: 0px;    
+    margin: 0px;   
+}
+img {
+    display: none;
 }
 
 #nameOfGame {
@@ -10,12 +13,9 @@ body {
     text-align: center;
     font-size: 50px;
     color: rgb(196, 6, 6);
-    font-family: "Creepster"
+    font-family: "Creepster";
 }
-main {
-    display: flex;
-    justify-content: center;
-}
+
 h1 {
     margin-bottom: 0px;
 }
@@ -24,6 +24,12 @@ h1 {
     text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
                 1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
 }
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
 canvas {
     background-image: url("https://media.istockphoto.com/photos/poker-table-picture-id1046326882?k=20&m=1046326882&s=612x612&w=0&h=G7D7aw9iB8p1A9LH26O9e6p8Pt5p82B44MbWPrIZmRo=");
     background-size: cover;
@@ -39,15 +45,6 @@ canvas {
 .cards {
     height: 10px;
     width: 15px;
-    display: none;
-}
-
-#jigsaw {
-    display: none;
-}
-
-#dealerHidden {
-    display: none;
 }
 
 button {
@@ -74,18 +71,17 @@ button {
     border: 2px solid white;
     box-shadow: 0px 0px 10px 10px white;
     background-image: url("https://media1.giphy.com/media/jQS9YkJXofyeI/giphy.gif?cid=ecf05e47k2be6z2w71grutqf3fcszev5z11zbawe5l2tzup4&rid=giphy.gif&ct=g");
-    width: 65vw;
+    width: 75vw;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    border-radius: 50%;
+    border-radius: 25px;
 }
 
 .scoreboard {
-    display: flexbox;
     color: white;   
     background-color: maroon;
-    border-radius: 30%;
+    border-radius: 25px;
     border: 2px solid rgb(230, 230, 19);
     box-shadow: 0px 0px 10px 10px rgb(211, 211, 142);
     width: 500px;
@@ -94,27 +90,42 @@ button {
     margin-right: auto;
     justify-content: center;
     text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #playerTotal {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 0px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    font-family: Arial, Helvetica, sans-serif;
     color: red;
-    text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+    text-shadow: 1px 0 #fff, -1px 0 #fff, 0 1px #fff, 0 -1px #fff,
                 1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
     font-size: 25px;
-    
 }
-#score, #money {
+
+#score {
     text-align: center;
     color: black;
-    text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+    font-family: Arial, Helvetica, sans-serif;
+    text-shadow: 1px 0 #fff, -1px 0 #fff, 0 1px #fff, 0 -1px #fff,
                 1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
-    font-size: 20px;
+    font-size: 25px;
     margin-bottom: 0px;
 }
+
+#money {
+    color: green;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    text-shadow: 1px 0 #fff, -1px 0 #fff, 0 1px #fff, 0 -1px #fff,
+                1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+    font-size: 25px;
+    margin-bottom: 0px;
+}
+
 
 #reset {
     border-radius: 50%;
@@ -127,7 +138,6 @@ button {
     border-radius: 0;
     color: white;
     background-image: url("https://media1.giphy.com/media/12Eo7WogCAoj84/giphy.gif?cid=790b7611ca8deb55d51b9ab4a4849eda6a25561d4eea78ae&rid=giphy.gif&ct=g");
-
 }
 
 input {
@@ -145,13 +155,14 @@ input {
     background-size: cover;
     color: white;   
 }
+
 #stay {
     background-image: url("https://ihfiles.com/products/21/1441/p/4/979895.jpeg");
     background-size: cover;
     color: white;
 }
+
 #doubleDown {
-    
     background-image: url("https://ihfiles.com/products/21/1441/p/4/979860.jpeg");
     background-size: cover;
     color: white;

@@ -14,30 +14,12 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
         </style>
-
 </head>
-<!--  -->
+
 <body>
-    <!-- <container class="header"> -->
-        <div id="title">
-            <h1 id="nameOfGame">♥️♠️Jigsaw Blackjack♣️♦️</h1>
-            
-            <p id="result"> </p>
-           
-            
-        </div>
-       
-
-    <!-- </container> -->
-    <main>
-        <!-- <div class=""> -->
-        
-        <canvas id="canvas">
-
-        </canvas>
-        
-        <!-- </div> -->
-        <img src="./media/jigsaw.jpg" alt = "jigsaw" id="jigsaw"/>
+    <div class="images">
+        <img src="./media/jigsaw.png" alt = "Jigsaw" id="jigsaw"/>
+        <img src="./media/upsideDownJigsaw.png" alt = "Jigsaw Upsidedown" id="jigsawUpsideDown" />
         <img src="./media/jigsawHidden.png" alt = "dealer card facedown" id="dealerHidden" />
         <img src="./media/2_of_clubs.png" alt = "2 of clubs" class="cards" id="twoOfClubs"/>
         <img src="./media/2_of_diamonds.png" alt = "2 of diamonds" class="cards" id="twoOfDiamonds"/>
@@ -91,18 +73,28 @@
         <img src="./media/ace_of_diamonds.png" alt = "ace of diamonds" class="cards" id="aceOfDiamonds"/>
         <img src="./media/ace_of_hearts.png" alt = "ace of clubs" class="cards" id="aceOfHearts"/>
         <img src="./media/ace_of_spades.png" alt = "ace of spades" class="cards" id="aceOfSpades"/>
+    </div>
+
+    <div id="title">
+        <h1 id="nameOfGame">♥️♠️Jigsaw Blackjack♣️♦️</h1>
+        <p id="result"> </p>            
+        </div>
+
+    <main>
+        <canvas id="canvas">
+        </canvas>
     </main>
    
     <div class="scoreboard">
         <p id="score"></p>
-        <p id="money"></p>
         <p id="playerTotal"></p>
+        <p id="money"></p>
+        
     </div>
-        <footer>
+
+    <footer>
         <div class="buttons">
-            <button id="reset">
-                NEW SESSION
-            </button>
+            <button id="reset">NEW SESSION</button>
             <button id="bet" > BET AMOUNT: <br> $ 
                 <input type="number" id="amount"/>
             </button>
@@ -110,9 +102,7 @@
             <button id="hit">HIT</button>
             <button id="stay">STAY</button>
             <button id="doubleDown">DOUBLE DOWN</button>
-        </div>
-            
+        </div>           
     </footer>
-
 </body>
 </html> 
