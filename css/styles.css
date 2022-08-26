@@ -123,15 +123,11 @@ button {
     color: white;
 }
 
-#hit {
-    background-color: black;
-    color: white;   
-}
-
 #bet {
     border-radius: 0;
     color: white;
-    background-color: rgb(17, 140, 79);
+    background-image: url("https://media1.giphy.com/media/12Eo7WogCAoj84/giphy.gif?cid=790b7611ca8deb55d51b9ab4a4849eda6a25561d4eea78ae&rid=giphy.gif&ct=g");
+
 }
 
 input {
@@ -139,16 +135,25 @@ input {
 }
 
 #deal {
-    background-color: green;
+    background-image: url("https://ihfiles.com/products/21/1441/p/4/979870.jpeg");
+    background-size: cover;
     color: white;
-    
+}
+
+#hit {
+    background-image: url("https://ihfiles.com/products/21/1441/p/4/979905.jpeg");
+    background-size: cover;
+    color: white;   
 }
 #stay {
-    background-color: rgb(196, 6, 6);
+    background-image: url("https://ihfiles.com/products/21/1441/p/4/979895.jpeg");
+    background-size: cover;
     color: white;
 }
 #doubleDown {
-    background-color: blue;
+    
+    background-image: url("https://ihfiles.com/products/21/1441/p/4/979860.jpeg");
+    background-size: cover;
     color: white;
 }
 

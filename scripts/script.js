@@ -686,7 +686,7 @@ reset.addEventListener("click", function restart () {
     ctx.fillText("- Stay: You are content with your hand and would like to turn it over to Jigsaw.", 4, 292)
     ctx.fillText("- Double Down: You place a bet equal to the amount of your original bet and receive only one card.  It is then", 4, 314)
     ctx.fillText("  Jigsaw's turn.  If you win, you win both your original and double down bet.  If you lose, you lose both bets.", 4, 336)
-    ctx.strokeText("- The rules are like a normal game of Blackjack, except Jigsaw doesn't believe in insurance or splitting pairs.", 4, 50)
+     ctx.strokeText("- The rules are like a normal game of Blackjack, except Jigsaw doesn't believe in insurance or splitting pairs.", 4, 50)
     ctx.strokeText("- The goal of Jigsaw Blackjack is to for your hand value be worth more than Jigsaw's without going over 21.", 4, 72)
     ctx.strokeText("- The numerical cards are worth the number on their card.  Face cards are worth 10 and Aces are worth 1 or 11.", 4, 94)
     ctx.strokeText("- Place your bet then you and Jigsaw are dealt two cards, where one of Jigsaw's cards is facedown.", 4, 116)
