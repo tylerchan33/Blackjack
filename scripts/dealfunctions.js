@@ -42,7 +42,6 @@ function hitButton (e) {
 
 const hit = document.querySelector("#hit")
 hit.onclick = hitButton
-
     
 function dealerTurn1 () {
     const canvas = document.getElementById("canvas")
